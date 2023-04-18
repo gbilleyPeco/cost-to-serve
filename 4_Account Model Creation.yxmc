@@ -1,0 +1,944 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">.\Account List.xlsx|||`Selected Accounts$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Account List.xlsx
+Query=`Selected Accounts$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Corporate Code" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Corporate Description" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Account Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="390" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Corporate Code" selected="True" type="V_WString" size="19" />
+            <SelectField field="Corporate Description" selected="False" />
+            <SelectField field="Base Model" selected="False" />
+            <SelectField field="Account Model" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Set corporate code a string</AnnotationText>
+          <DefaultAnnotationText>Set corporate code a string</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="546" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Evaulate</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-03-21 15:43:11</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Y</Operand>
+              <StartDate>2022-03-21 15:43:11</StartDate>
+              <EndDate>2022-03-21 15:43:11</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Evaulate] = "Y"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone">
+        <Position x="1134" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Corporate Code" order="Asc" />
+            <Field field="Evaulate" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output2">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Corporate Code" order="Asc" />
+            <Field field="Evaulate" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output3">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Corporate Code" order="Asc" />
+            <Field field="Evaulate" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBlockUntilDone" />
+    </Node>
+    <Node ToolID="368">
+      <GuiSettings>
+        <Position x="1254" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="ControlParams"><![CDATA[Control Parameter (15)=Corporate Code
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>3_Return Profile Creation - Output (55)</Name>
+          <AnnotationText>Update input files based on selected account</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="3_Return Profile Creation - Output.yxmc" />
+    </Node>
+    <Node ToolID="270">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="246" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Corporate Code" />
+            <Field field="Corporate Description" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Unique">
+          <RecordInfo>
+            <Field name="Corporate Code" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Corporate Description" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Account Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Corporate Code" order="Asc" />
+            <Field field="Corporate Description" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Duplicates">
+          <RecordInfo>
+            <Field name="Corporate Code" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Corporate Description" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Account Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Corporate Code" order="Asc" />
+            <Field field="Corporate Description" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="279">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="282" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="customername" action="GroupBy" rename="customername" />
+            <SummarizeField field="corpcode" action="GroupBy" rename="corpcode" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="customername" size="8190" source="Summarize: GroupBy - customername" type="V_WString" />
+            <Field name="corpcode" size="200" source="Summarize: GroupBy - corpcode" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="customername" order="Asc" />
+            <Field field="corpcode" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="280">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="522" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="customername" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="customername" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_customername" selected="False" rename="Right_customername" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="Int32" />
+            <Field name="customername" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productnamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="periodname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="minquantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="maxquantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantityuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="status" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="demandstatus" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="servicemode" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitprice" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitpriceuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycost" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycostuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="customername" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="Int32" />
+            <Field name="customername" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productnamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="periodname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="minquantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="maxquantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantityuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="status" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="demandstatus" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="servicemode" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitprice" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitpriceuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycost" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycostuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="corpcode" size="200" source="Summarize: GroupBy - corpcode" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="customername" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="customername" size="8190" source="Summarize: GroupBy - customername" type="V_WString" />
+            <Field name="corpcode" size="200" source="Summarize: GroupBy - corpcode" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="customername" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="281">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="738" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>ByName</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="Int32" column="1" />
+                <Field name="customername" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="2" />
+                <Field name="productname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="3" />
+                <Field name="productnamegroupbehavior" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="4" />
+                <Field name="periodname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="5" />
+                <Field name="quantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="6" />
+                <Field name="minquantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="7" />
+                <Field name="maxquantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="8" />
+                <Field name="quantityuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="9" />
+                <Field name="status" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="10" />
+                <Field name="demandstatus" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="11" />
+                <Field name="servicemode" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="12" />
+                <Field name="unitprice" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="13" />
+                <Field name="unitpriceuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="14" />
+                <Field name="penaltycost" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="15" />
+                <Field name="penaltycostuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="16" />
+                <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="17" />
+                <Field name="corpcode" size="200" source="Summarize: GroupBy - corpcode" type="V_WString" column="18" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="Int32" column="1" />
+                <Field name="customername" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="2" />
+                <Field name="productname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="3" />
+                <Field name="productnamegroupbehavior" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="4" />
+                <Field name="periodname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="5" />
+                <Field name="quantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="6" />
+                <Field name="minquantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="7" />
+                <Field name="maxquantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="8" />
+                <Field name="quantityuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="9" />
+                <Field name="status" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="10" />
+                <Field name="demandstatus" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="11" />
+                <Field name="servicemode" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="12" />
+                <Field name="unitprice" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="13" />
+                <Field name="unitpriceuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="14" />
+                <Field name="penaltycost" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="15" />
+                <Field name="penaltycostuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="16" />
+                <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" column="17" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="Int32" />
+            <Field name="customername" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productnamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="periodname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="minquantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="maxquantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantityuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="status" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="demandstatus" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="servicemode" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitprice" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitpriceuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycost" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycostuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="corpcode" size="200" source="Summarize: GroupBy - corpcode" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="283">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="918" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Corporate Code" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="corpcode" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Corporate Code" selected="True" input="Left_" />
+                <SelectField field="Left_Evaulate" selected="True" input="Left_" />
+                <SelectField field="Left_Corporate Description" selected="True" input="Left_" />
+                <SelectField field="Left_Base Model" selected="True" input="Left_" />
+                <SelectField field="Left_Account Model" selected="True" input="Left_" />
+                <SelectField field="Left_Sequence" selected="True" input="Left_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Corporate Code" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Corporate Code" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="Int32" />
+            <Field name="customername" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productnamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="periodname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="minquantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="maxquantity" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantityuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="status" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="demandstatus" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="servicemode" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitprice" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitpriceuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycost" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycostuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="corpcode" size="200" source="Summarize: GroupBy - corpcode" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="corpcode" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="284">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="1038" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Corporate Code" />
+            <Field field="Evaulate" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Unique">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Corporate Code" order="Asc" />
+            <Field field="Evaulate" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Duplicates">
+          <RecordInfo>
+            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Corporate Code" order="Asc" />
+            <Field field="Evaulate" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="367">
+      <GuiSettings>
+        <Position x="54" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>1_CF_Inputs (289)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Expanded Production Constraints">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="Int32" />
+            <Field name="facilityname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="facilitynamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="productname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="productnamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="periodname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="periodnamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="bomname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="bomnamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="processname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="processnamegroupbehavior" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="constrainttype" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="constraintvalue" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="constraintvalueuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="status" size="8190" source="Formula: IF [notes] = &quot;RepairsPerMonthVariance&quot; THEN &quot;Include&quot; ELSE [status] ENDIF " type="V_WString" />
+            <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="soipquantity" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="conversionnotes" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_81384" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_81399" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_85557" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_81377" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_89364" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_16559" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15630" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_14258" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_80274" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_86253" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_86283" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_17088" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15191" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_85759" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15738" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_14904" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_14864" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_80293" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_14867" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_82408" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_80290" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_14739" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_86410" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_81688" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_80500" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_17064" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15459" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_88027" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_87025" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_14285" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_88008" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_81398" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_81009" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15470" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_14791" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15282" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_80308" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_14994" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15011" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15055" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15896" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15021" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_80590" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="account_15472" size="200" source="File: odbc:DSN=PECO_AS_INTENDED_03222023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_f1f23fc4e79f;PWD=__EncPwd1__|||select productionconstraints.* &#xA;from productionconstraints" type="V_WString" />
+            <Field name="original_status_field" size="200" source="Formula: [status]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Customer Demand">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="Int32" />
+            <Field name="customername" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="productnamegroupbehavior" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="periodname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="minquantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="maxquantity" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="quantityuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="status" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="demandstatus" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="servicemode" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitprice" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="unitpriceuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycost" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="penaltycostuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+            <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Inventory Policies">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="Int32" />
+            <Field name="facilityname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="productname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="simulationpolicy" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="simulationpolicyvalue1" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="simulationpolicyvalue1uom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="simulationpolicyvalue2" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="simulationpolicyvalue2uom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="stockingsite" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="status" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="reviewperiodfirsttime" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="reviewperiod" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="reviewperioduom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="unitvalue" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="unitvalueuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="carryingcostpercentage" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="initialinventory" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="initialinventoryuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="unitstoragecost" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="unitstoragecostuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="mindwelltime" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="mindwelltimeuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="maxdwelltime" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="maxdwelltimeuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="doswindow" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="doswindowuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="dosleadtime" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="dosleadtimeuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="dosreviewperiodfirsttime" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="dosreviewperiod" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="dosreviewperioduom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="surpluslevel" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="surplusleveluom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="surplusreviewperiodfirsttime" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="surplusreviewperiod" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="surplusreviewperioduom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="forecasttype" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="dosuserdefinedforecastname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="timebetweeninventoryturns" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="timebetweeninventoryturnsuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="quotedtimetofill" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+            <Field name="quotedtimetofilluom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select inventorypolicies.* &#xA;from inventorypolicies" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Periods">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select periods.* &#xA;from periods" type="Int32" />
+            <Field name="periodname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select periods.* &#xA;from periods" type="V_WString" />
+            <Field name="startdate" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select periods.* &#xA;from periods" type="V_WString" />
+            <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select periods.* &#xA;from periods" type="V_WString" />
+            <Field name="includeinviewtotals" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select periods.* &#xA;from periods" type="V_WString" />
+            <Field name="workingdays" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select periods.* &#xA;from periods" type="V_WString" />
+            <Field name="reportheadermonth" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select periods.* &#xA;from periods" type="V_WString" />
+            <Field name="desc" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select periods.* &#xA;from periods" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Customers">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="Int32" />
+            <Field name="customername" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="status" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="address" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="city" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="region" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="postalcode" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="country" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="latitude" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="longitude" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesource" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesourceorders" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesourcelineitems" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowbackorders" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="backordertimelimit" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="backordertimeuom" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowpartialfillorders" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowpartialfilllineitems" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowdirectship" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="region.1" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="avgloadsz" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="loccode" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="locdescription" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="lower48_can_mex" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="soipquantity" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="pecoregion" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpcode" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpname" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="insoip" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="pecosubregion" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="liveload" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="liveloadrank" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="zone" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="heat_treatment_rqmt" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="new_pallet_rqmt" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="depottype" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="transservicetype" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="queuepriority" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Scenarios">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="Int32" />
+            <Field name="scenarioname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+            <Field name="status" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+            <Field name="description" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+            <Field name="tags" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+            <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Scenario Item Assignments">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitemassignments.* &#xA;from scenarioitemassignments" type="Int32" />
+            <Field name="scenarioname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitemassignments.* &#xA;from scenarioitemassignments" type="V_WString" />
+            <Field name="itemname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitemassignments.* &#xA;from scenarioitemassignments" type="V_WString" />
+            <Field name="itemorder" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitemassignments.* &#xA;from scenarioitemassignments" type="V_WString" />
+            <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitemassignments.* &#xA;from scenarioitemassignments" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Scenario Items">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="Int32" />
+            <Field name="itemname" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="V_WString" />
+            <Field name="tablename" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="V_WString" />
+            <Field name="action" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="V_WString" />
+            <Field name="condition" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="V_WString" />
+            <Field name="status" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="V_WString" />
+            <Field name="description" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="V_WString" />
+            <Field name="tags" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="V_WString" />
+            <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarioitems.* &#xA;from scenarioitems" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="1_CF_Inputs.yxmc" />
+    </Node>
+    <Node ToolID="319">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="234" y="54" width="516" height="96" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[This workflow iterates through all the accounts that are marked to be evaluated and then calls the macro "3_Return Profile Creation - Output" at each iteration.
+
+Macro "3_Return Profile Creation - Output" then calls macros "1_CF_Inputs" and "2_Account Model - Inventory Adjustments".
+
+Finally, macro "2_Account Model - Inventory Adjustments" takes as input macro "1_CF_Inputs"
+]]></Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="270" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="True" />
+      <Destination ToolID="283" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="281" Connection="Output" />
+      <Destination ToolID="283" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output2" />
+      <Destination ToolID="368" Connection="Control" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="270" Connection="Unique" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="279" Connection="Output" />
+      <Destination ToolID="280" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="367" Connection="Customer Demand" />
+      <Destination ToolID="280" Connection="Left" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="280" Connection="Join" />
+      <Destination ToolID="281" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="280" Connection="Left" />
+      <Destination ToolID="281" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="283" Connection="Join" />
+      <Destination ToolID="284" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="284" Connection="Unique" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="367" Connection="Customers" />
+      <Destination ToolID="279" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>4_Account Model Creation</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="77bb08f5-e7b8-4a3b-838c-8742f32884ca" />
+      <Telemetry>
+        <PreviousWorkflowId value="55b52432-d1d3-421a-8e70-c42eef7c1544" />
+        <OriginWorkflowId value="77bb08f5-e7b8-4a3b-838c-8742f32884ca" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (11)</Name>
+          <ToolId value="11" />
+          <Questions />
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <BatchMacro>
+        <OutputMode>AllSame</OutputMode>
+        <ControlParams />
+      </BatchMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="367" Selected="True" />
+        <Tool ToolId="368" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
