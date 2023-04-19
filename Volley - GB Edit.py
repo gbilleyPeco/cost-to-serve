@@ -178,18 +178,37 @@ for account in df_selected_accounts['Corporate Code'].unique():
     
     ##### MACRO 2
 
-    # Adjust productionconstraints table.
+# =============================================================================
+#     # Note: This is misleading. Locations that start with "R_" are NOT renters. They are Return locations.
+#     # The ProductionConstraints table has 'constraints' for 'production'......
+#     # What is "produced"?.... 
+#     #   RFU_NEW are produced by manufacturers.
+#     #   RFU and WIP are produced by return locations.
+#     #   There are also rows corresponding to repairs, with BOMName == 'BOM_RFU_REPAIR'.
+#     df_productionconstraints['constraintvalue'] = df_productionconstraints['constraintvalue'].astype(float)
+#     df_renters = df_productionconstraints[df_productionconstraints['facilityname'].str.startswith('R_', na=False)]
+#     df_renters = df_renters.groupby('periodname')['constraintvalue'].apply(sum)   # Calc total returns by month.
+#     df_RFU_NEW = df_productionconstraints[(~df_productionconstraints['facilityname'].str.startswith('R_', na=False)) & (df_productionconstraints['productname'] == 'RFU_NEW')]
+#     df_RFU_NEW1 = df_RFU_NEW.groupby('periodname')['constraintvalue'].apply(sum)
+#     df_renters = df_renters.to_frame()
+#     df_renters = df_renters.reset_index()
+#     df_RFU_NEW1 = df_RFU_NEW1.to_frame()
+#     df_RFU_NEW1 = df_RFU_NEW1.reset_index()
+# =============================================================================
+
+
     df_productionconstraints['constraintvalue'] = df_productionconstraints['constraintvalue'].astype(float)
-    df_renters = df_productionconstraints[df_productionconstraints['facilityname'].str.startswith('R_', na=False)]
-    df_renters = df_renters.groupby('periodname')['constraintvalue'].apply(sum)
+    df_returns = df_productionconstraints[df_productionconstraints['facilityname'].str.startswith('R_', na=False)]
+    df_returns = df_returns.groupby('periodname')['constraintvalue'].apply(sum)   # Calc total returns each month.
     df_RFU_NEW = df_productionconstraints[(~df_productionconstraints['facilityname'].str.startswith('R_', na=False)) & (df_productionconstraints['productname'] == 'RFU_NEW')]
-    df_RFU_NEW1 = df_RFU_NEW.groupby('periodname')['constraintvalue'].apply(sum)
-    df_renters = df_renters.to_frame()
-    df_renters = df_renters.reset_index()
+    df_RFU_NEW1 = df_RFU_NEW.groupby('periodname')['constraintvalue'].apply(sum)  # Calc total new manufactured pallets each month.
+    df_returns = df_returns.to_frame()
+    df_returns = df_returns.reset_index()
     df_RFU_NEW1 = df_RFU_NEW1.to_frame()
     df_RFU_NEW1 = df_RFU_NEW1.reset_index()
 
 
+    # Get total demand (issue) quantity by month.
     df_demand['quantity'] = df_demand['quantity'].astype(float)
     df_demand1 = df_demand.groupby('periodname')['quantity'].apply(sum)
     df_demand1 = df_demand1.to_frame()
