@@ -185,6 +185,7 @@ for account in df_selected_accounts['Corporate Code'].unique():
 #     #   RFU_NEW are produced by manufacturers.
 #     #   RFU and WIP are produced by return locations.
 #     #   There are also rows corresponding to repairs, with BOMName == 'BOM_RFU_REPAIR'.
+#
 #     df_productionconstraints['constraintvalue'] = df_productionconstraints['constraintvalue'].astype(float)
 #     df_renters = df_productionconstraints[df_productionconstraints['facilityname'].str.startswith('R_', na=False)]
 #     df_renters = df_renters.groupby('periodname')['constraintvalue'].apply(sum)   # Calc total returns by month.
@@ -195,8 +196,6 @@ for account in df_selected_accounts['Corporate Code'].unique():
 #     df_RFU_NEW1 = df_RFU_NEW1.to_frame()
 #     df_RFU_NEW1 = df_RFU_NEW1.reset_index()
 # =============================================================================
-
-
     df_productionconstraints['constraintvalue'] = df_productionconstraints['constraintvalue'].astype(float)
     df_returns = df_productionconstraints[df_productionconstraints['facilityname'].str.startswith('R_', na=False)]
     df_returns = df_returns.groupby('periodname')['constraintvalue'].apply(sum)   # Calc total returns each month.
@@ -213,33 +212,89 @@ for account in df_selected_accounts['Corporate Code'].unique():
     df_demand1 = df_demand.groupby('periodname')['quantity'].apply(sum)
     df_demand1 = df_demand1.to_frame()
     df_demand1 = df_demand1.reset_index()
-
-
+    
+    # Are only issues in the demand table?
+    #df_demand['customername'].str[:2].unique()   # Yes
+    
+    # =============================================================================
+    #     df_inventorypolicies['initialinventory'] = df_inventorypolicies['initialinventory'].astype(float)
+    #     df_inventorypolicies = df_inventorypolicies['initialinventory'].sum()
+    #     df_inventorypolicies = pd.DataFrame({'periodname':'Period 01', 'initialinventory':df_inventorypolicies}, index = [0])
+    # =============================================================================
     df_inventorypolicies['initialinventory'] = df_inventorypolicies['initialinventory'].astype(float)
-    df_inventorypolicies = df_inventorypolicies['initialinventory'].sum()
-    df_inventorypolicies = pd.DataFrame({'periodname':'Period 01', 'initialinventory':df_inventorypolicies}, index = [0])
+    initial_inventory = df_inventorypolicies['initialinventory'].sum()
+    df_initial_inventory = pd.DataFrame({'periodname':'Period 01', 'initialinventory':initial_inventory}, index = [0])
 
 
-    df_final = df_demand1.merge(df_renters,on='periodname', how = 'left').merge(df_inventorypolicies, on = 'periodname', how = 'left').merge(df_RFU_NEW1, on = 'periodname', how = 'outer').merge(df_periods[['periodname', 'workingdays']], on = 'periodname', how = 'left')
+# =============================================================================
+#     df_final = df_demand1.merge(df_renters,on='periodname', how = 'left').merge(df_inventorypolicies, on = 'periodname', how = 'left').merge(df_RFU_NEW1, on = 'periodname', how = 'outer').merge(df_periods[['periodname', 'workingdays']], on = 'periodname', how = 'left')
+#     df_final = df_final.rename(columns={'constraintvalue_x':'constraintvalue', 'constraintvalue_y':'MFG'})
+#     df_final[['quantity', 'constraintvalue', 'initialinventory', 'MFG', 'workingdays']] = df_final[['quantity', 'constraintvalue', 'initialinventory', 'MFG', 'workingdays']].fillna(0)
+#     df_final['Beginning Inventory'] = df_final[['quantity', 'constraintvalue', 'MFG', 'initialinventory']].apply(lambda x: x[3] if x[3] > 0 else 0, axis = 1)
+#     last_row = df_final.tail(1)
+#     df_final = df_final.drop(df_final.index[len(df_final)-1])
+#     df_final = pd.concat([last_row, df_final]).reset_index(drop = True)
+# =============================================================================
+    df_final = df_demand1.merge(df_returns,on='periodname', how = 'left')
+    df_final = df_final.merge(df_initial_inventory, on = 'periodname', how = 'left')
+    df_final = df_final.merge(df_RFU_NEW1, on = 'periodname', how = 'outer')
+    df_final = df_final.merge(df_periods[['periodname', 'workingdays']], on = 'periodname', how = 'left')
     df_final = df_final.rename(columns={'constraintvalue_x':'constraintvalue', 'constraintvalue_y':'MFG'})
     df_final[['quantity', 'constraintvalue', 'initialinventory', 'MFG', 'workingdays']] = df_final[['quantity', 'constraintvalue', 'initialinventory', 'MFG', 'workingdays']].fillna(0)
     df_final['Beginning Inventory'] = df_final[['quantity', 'constraintvalue', 'MFG', 'initialinventory']].apply(lambda x: x[3] if x[3] > 0 else 0, axis = 1)
+    
+    # Make the last row the first row.
     last_row = df_final.tail(1)
     df_final = df_final.drop(df_final.index[len(df_final)-1])
     df_final = pd.concat([last_row, df_final]).reset_index(drop = True)
+    
+    # Beginning inventory for a month = beginning inventory of last month, + returns + MFG - issues.
+    # constraintvalue = returns
+    # quantity = issues
     for i in list(df_final.index.values):
         if df_final.loc[i, 'Beginning Inventory'] == 0 and i != 0:
-            df_final.loc[i, 'Beginning Inventory'] = df_final.loc[i-1, 'Beginning Inventory'] + df_final.loc[i-1, 'constraintvalue'] + df_final.loc[i-1, 'MFG'] - df_final.loc[i-1, 'quantity']
+            df_final.loc[i, 'Beginning Inventory'] = df_final.loc[i-1, 'Beginning Inventory'] + \
+            df_final.loc[i-1, 'constraintvalue'] + \
+            df_final.loc[i-1, 'MFG'] - \
+            df_final.loc[i-1, 'quantity']
+    
+# =============================================================================
+#     # The "move the last row to the top row" shenanigans is causing this line to error out. 
+#     # The added row has 'periodname' == '2023' and 'workingdays' == nan.
+#     df_final['workingdays'] = df_final['workingdays'].astype(int)
+# =============================================================================
+    df_final['workingdays'] = df_final['workingdays'].fillna(0)   # Added this line to fix above error. Let's see what happens.
     df_final['workingdays'] = df_final['workingdays'].astype(int)
+    
+    # Ending inventory = beginning inventory + returns + mfg - issues
     df_final['Ending Inventory'] = df_final[['quantity', 'constraintvalue', 'MFG', 'Beginning Inventory']].apply(lambda x: x[3] + x[1] + x[2]- x[0], axis = 1)
+    
+    # Gap_6Days = (issues per day * 6) minus beginning inventory. 
+    # WHAT IS THE INTENT OF THIS CODE?
     df_final['Gap_6Days'] = df_final[['quantity', 'workingdays', 'Beginning Inventory']].apply(lambda x: round(((x[0]/x[1])*6) - x[2]) if x[1] != 0 else np.nan, axis = 1)
+    
+    # Drop the row where 'periodname' == '2023'
     df_final = df_final[df_final['periodname'].str.contains('Period')]
+    
+    # Keep only the next 12 months. i.e. drop period 13 through 19.
     df_final = df_final[df_final['periodname'].apply(lambda x: int(x.split(' ')[1])) <= 12].reset_index(drop = True)
+    df_final_12_mos = df_final.copy()   # Make a copy since we're overwriting the df with just a max row.
+    
+    # Keep only the row where 'Gap_6Days' is maximum.
     df_final = df_final[df_final.Gap_6Days == df_final.Gap_6Days.max()][['Gap_6Days', 'periodname', 'quantity', 'constraintvalue', 'initialinventory']]
+    
+    # WHAT IS THE INTENT OF THIS CODE?
     df_final['NeededMFG'] = df_final[['Gap_6Days', 'periodname']].apply(lambda x: x[0]/(int(x[1].split(' ')[1])-1) if int(x[1].split(' ')[1])-1 != 0 else np.nan, axis = 1)
     df_final['Periods'] = df_final['periodname'].apply(lambda x: int(x.split(' ')[1])-1)
+    
+    # The below line returns an empty dataframe.
+    # This line of code implies that the upstream code that reduces df_final to one row is incorrect
+    # as this line attmpts to row index df_final, which is pointless if the dataframe is one row.
     df_final = df_final.loc[df_final.index.repeat(df_final['Periods'].iloc[0])].reset_index(drop = True)
     df_final['RowCount'] = df_final.index + 1
+    
+    
+    
     if len(df_final) > 0:
         df_final['periodname'] = df_final[['periodname', 'RowCount']].apply(lambda x: 'Period 0%d' %(int(x[0].split(' ')[1]) - x[1]), axis = 1)
     df_final = df_final[['NeededMFG', 'periodname', 'quantity', 'constraintvalue', 'initialinventory']]
