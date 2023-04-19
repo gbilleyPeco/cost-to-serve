@@ -269,8 +269,8 @@ for account in df_selected_accounts['Corporate Code'].unique():
     # Ending inventory = beginning inventory + returns + mfg - issues
     df_final['Ending Inventory'] = df_final[['quantity', 'constraintvalue', 'MFG', 'Beginning Inventory']].apply(lambda x: x[3] + x[1] + x[2]- x[0], axis = 1)
     
+    ############### WHAT IS THE INTENT OF THIS CODE? ###############
     # Gap_6Days = (issues per day * 6) minus beginning inventory. 
-    # WHAT IS THE INTENT OF THIS CODE?
     df_final['Gap_6Days'] = df_final[['quantity', 'workingdays', 'Beginning Inventory']].apply(lambda x: round(((x[0]/x[1])*6) - x[2]) if x[1] != 0 else np.nan, axis = 1)
     
     # Drop the row where 'periodname' == '2023'
@@ -283,7 +283,7 @@ for account in df_selected_accounts['Corporate Code'].unique():
     # Keep only the row where 'Gap_6Days' is maximum.
     df_final = df_final[df_final.Gap_6Days == df_final.Gap_6Days.max()][['Gap_6Days', 'periodname', 'quantity', 'constraintvalue', 'initialinventory']]
     
-    # WHAT IS THE INTENT OF THIS CODE?
+    ############### WHAT IS THE INTENT OF THIS CODE? ###############
     df_final['NeededMFG'] = df_final[['Gap_6Days', 'periodname']].apply(lambda x: x[0]/(int(x[1].split(' ')[1])-1) if int(x[1].split(' ')[1])-1 != 0 else np.nan, axis = 1)
     df_final['Periods'] = df_final['periodname'].apply(lambda x: int(x.split(' ')[1])-1)
     
