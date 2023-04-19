@@ -120,41 +120,50 @@ print('Reading transfer matrix data...')
 transfer_matrix = pd.read_excel(Transfer_Matrix, sheet_name='TransferMatrix')
 transfer_matrix_raw = transfer_matrix.copy()
 print('\tDone.')
-transfer_matrix = transfer_matrix.groupby(['Renter Corp Code', 'Renter Corp Desc', 'Return Loc Code'])['Return Volume'].apply(sum) # adding Return Loc Description creates Return Loc Code duplicates
+# transfer_matrix = transfer_matrix.groupby(['Renter Corp Code', 'Renter Corp Desc', 'Return Loc Code'])['Return Volume'].apply(sum) # adding Return Loc Description creates Return Loc Code duplicates
 # transfer_matrix_2 = transfer_matrix_raw.groupby(['Renter Corp Code', 'Renter Corp Desc', 'Return Loc Code', 'Return Loc Desc'])['Return Volume'].apply(sum) # adding Return Loc Description creates Return Loc Code duplicates
+transfer_matrix = transfer_matrix.groupby(['Renter Corp Code', 'Return Loc Code'])['Return Volume'].apply(sum)  # Removing 'Renter Corp Desc' as well.
+
 transfer_matrix = transfer_matrix.to_frame()
 transfer_matrix = transfer_matrix.reset_index()
 transfer_matrix['Renter Corp Code'] = transfer_matrix['Renter Corp Code'].astype(str)
 
-### Why are there "duplicate" rows in the transfer amtrix data?
-tm_groups = transfer_matrix_raw.groupby(['Renter Corp Code', 'Renter Corp Desc', 'Return Loc Code']).size()
-tm_groups[tm_groups>1]
+# =============================================================================
+# ### Why are there "duplicate" rows in the transfer matrix data?
+# # Becasue this data comes from a spreadsheet that is manually made each month. John/Alex create a
+# # spreadsheet of monthly transfer matrix data, and we then append the past 12 months of data
+# # together into this new spreadsheet. If a location's name/description changes then we get 
+# # duplicate rows. Therefore we need to group by only the renter and return codes.
+# 
+# tm_groups = transfer_matrix_raw.groupby(['Renter Corp Code', 'Renter Corp Desc', 'Return Loc Code']).size()
+# tm_groups[tm_groups>1]
+# 
+# '''
+# Renter Corp Code  Renter Corp Desc                        Return Loc Code
+# 14229             Teasdale Foods                          53258              2
+#                                                           74514              2
+# 14232             Trinity Plastics                        45487              2
+#                                                           56491              2
+# 14245             Massimo Zanetti Beverage USA            45038              2
+#                                                                             ..
+# 90580             TOSCA RPC                               70310              2
+# 90611             Pallet Logistics Of America (Recovery)  50650              2
+#                                                           53259              2
+#                                                           54905              2
+#                                                           55448              2
+# '''
+# tm_groups[tm_groups>2]
+# '''
+# Renter Corp Code  Renter Corp Desc  Return Loc Code
+# 14459             Kamps Pallets     65597              3
+# '''
+# 
+# # Look into these.
+# dup1 = transfer_matrix_raw[(transfer_matrix_raw['Renter Corp Code'] == 14229) & (transfer_matrix_raw['Return Loc Code'] == 53258)]
+# dup2 = transfer_matrix_raw[(transfer_matrix_raw['Renter Corp Code'] == 14459) & (transfer_matrix_raw['Return Loc Code'] == 65597)]
+# =============================================================================
 
-'''
-Renter Corp Code  Renter Corp Desc                        Return Loc Code
-14229             Teasdale Foods                          53258              2
-                                                          74514              2
-14232             Trinity Plastics                        45487              2
-                                                          56491              2
-14245             Massimo Zanetti Beverage USA            45038              2
-                                                                            ..
-90580             TOSCA RPC                               70310              2
-90611             Pallet Logistics Of America (Recovery)  50650              2
-                                                          53259              2
-                                                          54905              2
-                                                          55448              2
-'''
-tm_groups[tm_groups>2]
-'''
-Renter Corp Code  Renter Corp Desc  Return Loc Code
-14459             Kamps Pallets     65597              3
-'''
-
-# Look into these.
-dup1 = transfer_matrix_raw[(transfer_matrix_raw['Renter Corp Code'] == 14229) & (transfer_matrix_raw['Return Loc Code'] == 53258)]
-dup2 = transfer_matrix_raw[(transfer_matrix_raw['Renter Corp Code'] == 14459) & (transfer_matrix_raw['Return Loc Code'] == 65597)]
-
-
+# Note, the three lines below were commented out by Niko.
 # df_customers2 = df_customers[['customername', 'loccode', 'corpcode', 'corpname']]
 # df_demand3 = pd.merge(df_demand, df_customers2, on = 'customername', how = 'left')
 # df_demand3['corpcode'] = df_demand3['corpcode'].astype(str)
@@ -163,8 +172,13 @@ dup2 = transfer_matrix_raw[(transfer_matrix_raw['Renter Corp Code'] == 14459) & 
 
 for account in df_selected_accounts['Corporate Code'].unique():
     
+    ##### DELETE THIS LINE AFTER TESTING #####
+    account = df_selected_accounts['Corporate Code'].unique()[0]  # This line is only here for testing.
+    ##### DELETE THIS LINE AFTER TESTING #####
+    
     ##### MACRO 2
 
+    # Adjust productionconstraints table.
     df_productionconstraints['constraintvalue'] = df_productionconstraints['constraintvalue'].astype(float)
     df_renters = df_productionconstraints[df_productionconstraints['facilityname'].str.startswith('R_', na=False)]
     df_renters = df_renters.groupby('periodname')['constraintvalue'].apply(sum)
