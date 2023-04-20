@@ -1,12 +1,15 @@
 import datetime as dt
 import sqlalchemy as sal
-from sqlalchemy import create_engine
+#from sqlalchemy import create_engine
 import pandas as pd
 import numpy as np
 from optilogic import pioneer
 import math
 import warnings
 warnings.filterwarnings('ignore') # setting ignore as a parameter
+
+# Suppress scientific notation globally
+pd.options.display.float_format = '{:,.0f}'.format
 
 
 # Start time of the process
