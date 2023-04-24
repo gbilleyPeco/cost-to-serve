@@ -262,7 +262,7 @@ for account in df_selected_accounts['Corporate Code'].unique():
             df_final.loc[i-1, 'quantity']
     
 # =============================================================================
-#     # The "move the last row to the top row" shenanigans is causing this line to error out. 
+#     # The "move the last row to the top row" code is causing this line to error out. 
 #     # The added row has 'periodname' == '2023' and 'workingdays' == nan.
 #     df_final['workingdays'] = df_final['workingdays'].astype(int)
 # =============================================================================
