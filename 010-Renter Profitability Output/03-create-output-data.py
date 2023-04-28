@@ -111,7 +111,7 @@ ofs.columns
 # issue volume                              :   oss.shipmentsize where dest like 'I_' and period <= 12
 # return volume                             :   oss.shipmentsize where orig like 'R_' and period <= 12
 # transportation cost - issue               :   oss.shipmentcost where dest like 'I_' and period <= 12
-# transportation cost - return              :   
+# transportation cost - return              :   oss.shipmentcost where orig like 'R_' and period <= 12
 # baseline total fixed cost                 :   
 # baseline total painting cost              :   
 # baseline total depot handling cost        :   
