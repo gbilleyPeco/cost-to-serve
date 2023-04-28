@@ -47,8 +47,8 @@ To run this code, do the following:
 	   001-Transfer Matrix (Most Recent 12 Months) folder.
 	2. Ensure that the Account List.xlsx file has all accounts you wish to analyse labelled 
 	   with a "Y" in the "Evaluate" column (column C).
-	3. Update the user inputs in 01-create-transfer-matrix-excel.py and RUN the file.
-	4. Update the user inputs in 02-create-user-defined-columns.py and RUN the file.
+	3. Update the user inputs in 01-create-transfer-matrix-excel.py and RUN the file. (Can be done in Atlas).
+	4. Update the user inputs in 02-create-user-defined-columns.py and RUN the file. (Can be done in Atlas).
 	5. Update the user inputs in 1_CF_Inputs.yxmc and SAVE the file.
 	6. Update the user inputs in 3_Return Profile Creation - Output.yxmc and SAVE the file.
 	7. Update the user inputs in 4_Account Model Creation.yxmc and RUN the file.
