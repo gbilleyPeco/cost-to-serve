@@ -21,6 +21,6 @@ groupby_cols = ['Renter Corp Code', 'Renter Corp Desc', 'Return Loc Code', 'Retu
 transfer_matrix_agg = transfer_matrix.groupby(groupby_cols)['Return Volume'].sum().reset_index()
 
 # Save file.
-transfer_matrix_agg.to_excel(OUTPUT_FILENAME)
+transfer_matrix_agg.to_excel(OUTPUT_FILENAME, index=False)
 
 print('\tDone.')

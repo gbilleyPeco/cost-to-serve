@@ -14,7 +14,7 @@ APP_KEY = 'op_NWQ3YjQ0NjktNTBjOC00M2JkLWE4NWEtNjM1NDBmODA5ODEw'
 DB_NAME = 'PECO 2023-04 SOIP Opt (Volley)' # Cosmic Frog Model Name
 LOSS_RATE = 0.975
 Account_List = "Account List.xlsx"
-Transfer_Matrix = "TransferMatrix_RenterToReturnLocation_PlanningGroups202109_to_202202_Smoothed - v2 (1).xlsx"
+Transfer_Matrix = "TransferMatrix_RenterToReturnLocation.xlsx"
 ######################## END USER INPUTS ########################
 
 # Suppress scientific notation globally
@@ -118,7 +118,7 @@ df_selected_accounts = df_selected_accounts[['Corporate Code', 'Corporate Descri
 ############ MACRO 3
 
 print('Reading transfer matrix data...')
-transfer_matrix = pd.read_excel(Transfer_Matrix, sheet_name='TransferMatrix')
+transfer_matrix = pd.read_excel(Transfer_Matrix)
 transfer_matrix_raw = transfer_matrix.copy()
 print('\tDone.')
 
