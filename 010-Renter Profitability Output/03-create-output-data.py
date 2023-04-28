@@ -31,46 +31,73 @@ conn = engine.connect()
 
 # List of all Cosmic Frog Model tables
 db_tables = engine.table_names()
+tables_we_want  = ['optimizationnetworksummary', 'optimizationshipmentsummary']
+data_dict = {}
 
-
-
-
-
-# =============================================================================
-# for i in db_tables:
-#     with engine.connect() as conn:
-#         trans = conn.begin()
-#         if i == 'customers':
-#             print('Reading customers table.')
-#             df_customers = pd.read_sql_query("SELECT * FROM %s"%i, con=conn)
-#             if 'id' in df_customers.columns:
-#                 del df_customers['id']
-#         elif i == 'periods':
-#             print('Reading periods table.')
-#             df_periods = pd.read_sql_query("SELECT * FROM %s"%i, con=conn)
-#             if 'id' in df_periods.columns:
-#                 del df_periods['id']
-#         elif i == 'customerdemand':
-#             print('Reading customerdemand table.')
-#             df_demand = pd.read_sql_query("SELECT * FROM %s"%i, con=conn)
-#             if 'id' in df_demand.columns:
-#                 del df_demand['id']
-#         elif i == 'inventorypolicies':
-#             print('Reading inventorypolicies table.')
-#             df_inventorypolicies = pd.read_sql_query("SELECT * FROM %s"%i, con=conn)
-#             if 'id' in df_inventorypolicies.columns:
-#                 del df_inventorypolicies['id']
-#         elif i == 'productionconstraints':
-#             print('Reading productionconstraints table.')
-#             df_productionconstraints = pd.read_sql_query("SELECT * FROM %s"%i, con=conn)
-#             if 'id' in df_productionconstraints.columns:
-#                 del df_productionconstraints['id']
-#         trans.commit()
-# =============================================================================
+for i in db_tables:
+    with engine.connect() as conn:
+        trans = conn.begin()
+        if i in tables_we_want:
+            print(f'Reading table: {i}')
+            data = pd.read_sql_query("SELECT * FROM %s"%i, con=conn)
+            if 'id' in data.columns:
+                del data['id']
+            data_dict[i] = data
+        trans.commit()
 
 #%%#################################################################################################
 
-tables_we_want  = []
+# All columns in Optimization Network Summary
+ons = data_dict['optimizationnetworksummary']   # Note: This likely can't be used since we only want Periods 1-12.
+ons.columns
+# =============================================================================
+#       ['id', 'scenarioname', 'neoversion', 'dartversion', 'runstarttime',
+#        'totalruntime', 'solvetime', 'optimizationgappercentage',
+#        'totalsupplychaincost', 'totalrevenue', 'totalprofit',
+#        'totalserveddemandquantity', 'totalunserveddemandquantity',
+#        'quantityuom', 'totalserveddemandvolume', 'totalunserveddemandvolume',
+#        'volumeuom', 'totalserveddemandweight', 'totalunserveddemandweight',
+#        'weightuom', 'totaltransportationcost', 'totalshipmentcost',
+#        'totalintransitholdingcost', 'totaldutycost', 'totalproductioncost',
+#        'totalprebuildholdingcost', 'totalturnestimatedholdingcost',
+#        'totalstoragecost', 'totalsourcingcost', 'totalfixedoperatingcost',
+#        'totalfixedstartupcost', 'totalfixedclosingcost',
+#        'totalinboundhandlingcost', 'totaloutboundhandlingcost',
+#        'totalprocesscost', 'totaluserdefinedcost', 'optiriskscore']
+# =============================================================================
+
+# All columns in Optimization Shipment Summary
+oss = data_dict['optimizationshipmentsummary']
+oss.columns
+# =============================================================================
+#       ['id', 'scenarioname', 'periodname', 'originname', 'destinationname',
+#        'productgroupname', 'modename', 'shipments', 'shipmentcost',
+#        'shipmentsize', 'shipmentsizeuom', 'originlatitude', 'originlongitude',
+#        'destinationlatitude', 'destinationlongitude']
+# =============================================================================
+
+
+# ======================================================================================================
+#                        Pseudo-SQL diagram of where to get data
+#               Excel                       :                       Cosmic Frog
+# scenario_name                             :   *.scenarioname
+# model_name                                :   N/A
+# issue volume                              :   oss.shipmentsizeuom where dest like 'I_' and period <= 12
+# return volume                             :   oss.shipmentsizeuom where orig like 'R_' and period <= 12
+# Transportation cost - issue               :   
+# transportation cost - return              :   
+# baseline total fixed cost                 :   
+# baseline total painting cost              :   
+# baseline total depot handling cost        :   
+# baseline total inv carrying cost          :   
+# baseline total repairs                    :   
+# baseline total depot cost                 :   
+# baseline total depot cost variable CPI    :   
+# baseline total depot cost fixed CPI       :   
+# ======================================================================================================
+
+
+
 columns_we_want = []
 
 
