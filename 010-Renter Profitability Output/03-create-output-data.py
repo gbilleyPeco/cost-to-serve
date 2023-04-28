@@ -78,15 +78,39 @@ oss.columns
 #        'destinationlatitude', 'destinationlongitude']
 # =============================================================================
 
+# All columns in Optimization Facility Summary
+ofs = data_dict['optimizationfacilitysummary']
+ofs.columns
+# =============================================================================
+#       ['scenarioname', 'periodname', 'facilityname', 'initialstate',
+#        'initialstatus', 'optimizedstatus', 'totalfacilitycost',
+#        'operatingcost', 'startupcost', 'closingcost',
+#        'totalinboundhandlingcost', 'totaloutboundhandlingcost',
+#        'totalprebuildholdingcost', 'totalturnestimatedholdingcost',
+#        'totalstoragecost', 'totalintransitholdingcost', 'totalproductioncost',
+#        'totalprocesscost', 'totalinboundquantity', 'totaloutboundquantity',
+#        'totalinventoryquantity', 'totalproductionquantity', 'quantityuom',
+#        'totalinboundvolume', 'totaloutboundvolume', 'totalinventoryvolume',
+#        'totalproductionvolume', 'volumeuom', 'totalinboundweight',
+#        'totaloutboundweight', 'totalinventoryweight', 'totalproductionweight',
+#        'weightuom', 'throughputcapacity', 'throughputcapacityuom',
+#        'throughpututilization', 'storagecapacity', 'storagecapacityuom',
+#        'storageutilization', 'riskscore', 'concentrationrisk',
+#        'sourcecountrisk', 'capacityrisk', 'storagecapacityrisk',
+#        'throughputcapacityrisk', 'workcentercapacityrisk', 'geographicrisk',
+#        'latitude', 'longitude']
+# =============================================================================
+
+
 
 # ======================================================================================================
 #                        Pseudo-SQL diagram of where to get data
 #               Excel                       :                       Cosmic Frog
 # scenario_name                             :   *.scenarioname
 # model_name                                :   N/A
-# issue volume                              :   oss.shipmentsizeuom where dest like 'I_' and period <= 12
-# return volume                             :   oss.shipmentsizeuom where orig like 'R_' and period <= 12
-# Transportation cost - issue               :   
+# issue volume                              :   oss.shipmentsize where dest like 'I_' and period <= 12
+# return volume                             :   oss.shipmentsize where orig like 'R_' and period <= 12
+# transportation cost - issue               :   oss.shipmentcost where dest like 'I_' and period <= 12
 # transportation cost - return              :   
 # baseline total fixed cost                 :   
 # baseline total painting cost              :   
