@@ -31,7 +31,9 @@ conn = engine.connect()
 
 # List of all Cosmic Frog Model tables
 db_tables = engine.table_names()
-tables_we_want  = ['optimizationnetworksummary', 'optimizationshipmentsummary']
+tables_we_want  = ['optimizationnetworksummary', 
+                   'optimizationshipmentsummary',
+                   'optimizationfacilitysummary']
 data_dict = {}
 
 for i in db_tables:
