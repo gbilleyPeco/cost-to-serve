@@ -29,8 +29,7 @@ conn = engine.connect()
 # List of all Cosmic Frog Model tables
 db_tables = insp.get_table_names()
 
-tables_we_want  = ['optimizationnetworksummary', 
-                   'optimizationshipmentsummary',
+tables_we_want  = ['optimizationshipmentsummary',
                    'optimizationfacilitysummary',
                    'optimizationflowsummary',
                    'optimizationwarehousingsummary',
@@ -52,25 +51,6 @@ for i in db_tables:
 del data
 
 #%%#################################################################################################
-
-# All columns in Optimization Network Summary
-ons = data_dict['optimizationnetworksummary']   # Note: This likely can't be used since we only want Periods 1-12.
-ons.columns
-# =============================================================================
-#       ['id', 'scenarioname', 'neoversion', 'dartversion', 'runstarttime',
-#        'totalruntime', 'solvetime', 'optimizationgappercentage',
-#        'totalsupplychaincost', 'totalrevenue', 'totalprofit',
-#        'totalserveddemandquantity', 'totalunserveddemandquantity',
-#        'quantityuom', 'totalserveddemandvolume', 'totalunserveddemandvolume',
-#        'volumeuom', 'totalserveddemandweight', 'totalunserveddemandweight',
-#        'weightuom', 'totaltransportationcost', 'totalshipmentcost',
-#        'totalintransitholdingcost', 'totaldutycost', 'totalproductioncost',
-#        'totalprebuildholdingcost', 'totalturnestimatedholdingcost',
-#        'totalstoragecost', 'totalsourcingcost', 'totalfixedoperatingcost',
-#        'totalfixedstartupcost', 'totalfixedclosingcost',
-#        'totalinboundhandlingcost', 'totaloutboundhandlingcost',
-#        'totalprocesscost', 'totaluserdefinedcost', 'optiriskscore']
-# =============================================================================
 
 # All columns in Optimization Shipment Summary
 oss = data_dict['optimizationshipmentsummary']
@@ -204,7 +184,7 @@ fac.columns
 
 
 #%%#################################################################################################
-
+print('Calculating quantities and costs across all Opt scenarios.')
 
 # Issues
 issues = ols[['scenarioname', 'departingperiodname', 'destinationname', 'flowquantity']].copy()
@@ -294,27 +274,38 @@ tfc_cpi.rename('Total Fixed Cost CPI', inplace=True)
 
 
 #%%#################################################################################################
-
-# Combine all Series into one dataframe.
+print('Combining cost data into one DataFrame.')
 
 data = pd.concat([issues, returns, r_i, tc_i, tc_r, tc_t, tfc, tpc, thc, tic, trc, tdc, tvc_cpi, tfc_cpi], axis=1)
-data.to_excel('data_test.xlsx')
-
-
+#data.to_excel('data_test_2023-05-02.xlsx')
 
 
 #%%#################################################################################################
 
+print('Calculating differences between baseline and scenarios with removed accounts.')
 
-issues_test = oss[['scenarioname', 'periodname', 'shipments', 'shipmentsize', 'destinationname', 'originname']].copy()
-issues_test[#~(issues_test['originname'].isin(mfrs)) &
-            (issues_test['destinationname'].str.contains('I_')) & 
-            (issues_test['periodname'].str[-2:].astype(int) <= 12)]
+baseline   = 'SOIP (12 Month) (Dedicated Overrides MultiSourcing)'
+optimal    = 'SOIP Optimize (12 Month)'
+less_accts = [scenario for scenario in data.index if 'Less' in scenario]
 
+# For each account in less_accts, we want to subtract that row from baseline and give that
+# new row the index f"baseline minus {account}".
 
+subtracted_accts = dict()
 
+for acct in less_accts:
+    acct_number = acct[-5:]
+    # Compare to Baseline
+    delta = data.loc[baseline] - data.loc[acct]
+    delta.name = f'Baseline minus {acct_number}'
+    subtracted_accts[delta.name] = pd.DataFrame(delta).T
+    
+    # Compare to Optimal (with reassignments allowed)
+    delta = data.loc[optimal] - data.loc[acct]
+    delta.name = f'Reassignment minus {acct_number}'
+    subtracted_accts[delta.name] = pd.DataFrame(delta).T
 
-
+delta_df = pd.concat([df for df in subtracted_accts.values()])
 
 
 
