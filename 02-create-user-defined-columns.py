@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore') # setting ignore as a parameter
 ####################### BEGIN USER INPUTS #######################
 USER_NAME = 'graham.billey'
 APP_KEY = 'op_NWQ3YjQ0NjktNTBjOC00M2JkLWE4NWEtNjM1NDBmODA5ODEw'
-DB_NAME = 'PECO 2023-04 SOIP Opt (Volley)' # Cosmic Frog Model Name
+DB_NAME = 'PECO 2023-05 SOIP Opt (Cost to Serve)' # Cosmic Frog Model Name
 LOSS_RATE = 0.975
 Account_List = "Account List.xlsx"
 Transfer_Matrix = "TransferMatrix_RenterToReturnLocation.xlsx"
@@ -330,7 +330,7 @@ for account in df_selected_accounts['Corporate Code'].unique():
                                                 df_productionconstraints13[final_columns],
                                                 ])
     
-    df_productionconstraints_final[df_productionconstraints_final['constraintvalue'] != df_productionconstraints_final['adjusted_constraintvalue']]
+    #df_productionconstraints_final[df_productionconstraints_final['constraintvalue'] != df_productionconstraints_final['adjusted_constraintvalue']]
     df_productionconstraints_final['status'] = df_productionconstraints_final['original_status_field']
     df_productionconstraints_final['account_%s'%account] = df_productionconstraints_final['adjusted_constraintvalue']
     df_productionconstraints_final.drop(columns=['adjusted_constraintvalue'], inplace=True)
@@ -350,9 +350,73 @@ for account in df_selected_accounts['Corporate Code'].unique():
     
     df_productionconstraints_orig.drop(df_productionconstraints_orig.filter(regex='_DROP$').columns, axis=1, inplace=True)
 
+#%%#################################################################################################
+
+# Ensure the new columns contain the previous `constraintvalue` if the column is null. 
+# For example:
+#    
+# =============================================================================
+# df_productionconstraints_orig.iloc[47690]
+#
+# facilityname                 D_USA77571_77572
+# facilitynamegroupbehavior                None
+# productname                           RFU_NEW
+# productnamegroupbehavior                 None
+# periodname                          Period 09
+# periodnamegroupbehavior                  None
+# bomname                                  None
+# bomnamegroupbehavior                     None
+# processname                              None
+# processnamegroupbehavior                 None
+# constrainttype                          Fixed
+# constraintvalue                         21600
+# constraintvalueuom                       None
+# status                                Include
+# notes                                SOIP_MFG
+# soipquantity                               20
+# conversionnotes                          None
+# original_status_field                 Include
+# account_81384                             NaN    # Look here
+# account_81399                             NaN    # Look here
+# account_85557                             NaN    # Look here
+# =============================================================================
+
+acct_cols = [col for col in df_productionconstraints_orig.columns if 'account_' in col]
+
+c = acct_cols[0]
+# Put this inside loop
+for c in acct_cols:
+    df_productionconstraints_orig[c] = df_productionconstraints_orig[c].combine_first(df_productionconstraints_orig['constraintvalue'])
+
+# =============================================================================
+# df_productionconstraints_orig.iloc[47690]
+#
+# facilityname                 D_USA77571_77572
+# facilitynamegroupbehavior                None
+# productname                           RFU_NEW
+# productnamegroupbehavior                 None
+# periodname                          Period 09
+# periodnamegroupbehavior                  None
+# bomname                                  None
+# bomnamegroupbehavior                     None
+# processname                              None
+# processnamegroupbehavior                 None
+# constrainttype                          Fixed
+# constraintvalue                         21600
+# constraintvalueuom                       None
+# status                                Include
+# notes                                SOIP_MFG
+# soipquantity                               20
+# conversionnotes                          None
+# original_status_field                 Include
+# account_81384                           21600    # Look here
+# account_81399                           21600    # Look here
+# account_85557                           21600    # Look here
+# =============================================================================
 
 #%%#################################################################################################
-print('Uploading data to Cosmic Frog.')
+
+print('Uploading data to Cosmic Frog...')
 
 df_productionconstraints = df_productionconstraints_orig.copy()
 
@@ -364,6 +428,7 @@ for col in df_productionconstraints.columns.tolist():
 engine.execute('delete from productionconstraints')
 df_productionconstraints.to_sql('productionconstraints', con=engine, if_exists='append',index=False)
 conn.close()
+print('\tDone.')
 
 #%%#################################################################################################
 

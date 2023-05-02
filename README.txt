@@ -39,7 +39,7 @@ less-account-scenario-building/
 	4_Account Model Creation.yxmc
 	Account List.xlsx
 	README.txt
-	TransferMatric_RenterToReturnLocation.xlsx
+	TransferMatric_RenterToReturnLocation.xlsx   (NOTE: This file gets created when you run "01-create-transfer-matrix-excel.py")
 ---------------------------------------------------------------------------------------------------
 To run this code, do the following:
 
