@@ -136,6 +136,11 @@ for account in df_selected_accounts['Corporate Code'].unique():
 
     print('Account: ',account)
     
+    ###### UNCOMMENT FOR TESTING ######
+    #account = df_selected_accounts['Corporate Code'].unique()[0]
+    ###### UNCOMMENT FOR TESTING ######
+    
+    
     ##### MACRO 2
 
     # This section just creates dataframes for returns, new manufactured pallets, and converts datatypes.
@@ -262,6 +267,8 @@ for account in df_selected_accounts['Corporate Code'].unique():
     df_productionconstraints4 = df_productionconstraints4.to_frame()
     df_productionconstraints4 = df_productionconstraints4.reset_index()
  
+    # Join % Issue Volume with Returns by location and period.
+    # ConstraintValueAdjusted is the new returns for a given location and period.
     df_productionconstraints5 = pd.merge(df_productionconstraints3, df_productionconstraints4, on = ['facilityname', 'periodname'], how = 'inner')
     df_productionconstraints5['ConstraintValueAdjusted'] = df_productionconstraints5[['constraintvalue_x', 'constraintvalue_y', 'quantity', 'PercentIssueVolume']].apply(lambda x: round(x[0]-min((x[0]/x[1])*(x[2]*x[3]*LOSS_RATE),x[0]), 6), axis = 1)
 
@@ -277,11 +284,13 @@ for account in df_selected_accounts['Corporate Code'].unique():
     # Repairs for the 'Depot' group.
     df_productionconstraints8 = df_productionconstraints7[df_productionconstraints7['facilityname'] == 'Depot']
     
-    # Repairs at individual depots AND manufacturing at indivisual depots and total.
+    # Repairs at individual depots AND manufacturing at individual depots and total.
     df_productionconstraints9 = df_productionconstraints7[~(df_productionconstraints7['facilityname'] == 'Depot')]
     
     # Repairs at individual depots.
     df_productionconstraints10 = df_productionconstraints9[~(df_productionconstraints9['productname'] == 'RFU_NEW')]
+    # Note: We are creating an adjusted constraint value column becuase this column name is used when constructing the 
+    # 'account_' columns. We are not actually adjusting the individual depot constraint values.
     df_productionconstraints10['adjusted_constraintvalue'] = df_productionconstraints10['constraintvalue']
    
     # RFU and WIP returns grouped by period. 
@@ -298,10 +307,15 @@ for account in df_selected_accounts['Corporate Code'].unique():
     df_productionconstraints13 = pd.merge(df_productionconstraints8, df_productionconstraints12, on = 'periodname', how = 'inner')
 
     # Reduce the repairs for the Depot group by the WIP quantity we are excluding for each period.
-    # Use constraintvalue_x because this is the total for each depot summed individually.
-    df_productionconstraints13['production constraint value adjusted'] = df_productionconstraints13[['constraintvalue_x', 'WIPQuantity']].apply(lambda x: x[0] - x[1], axis = 1)
-    df_productionconstraints13.rename(columns={'production constraint value adjusted':'adjusted_constraintvalue',
-                                               'productname_y':'productname'}, inplace=True)
+    # Note: constraintvalue_x is the total returns for each period after removing the returns from the specified account.
+    #       constraintvalue is the original MinRepairsPerDay constraint.
+    df_productionconstraints13['adjusted_constraintvalue'] = df_productionconstraints13[['constraintvalue', 'WIPQuantity']].apply(lambda x: x[0] - x[1], axis = 1)
+    df_productionconstraints13.rename(columns={'productname_y':'productname'}, inplace=True)
+    
+    # Note: Need to set productname to nan because the original productionconstraints table 
+    # does not have 'WIP' in the productname column for rows where 'facilityname' == 'Depot'.
+    # This is causing the join to not happen properly when we join '..._final' to '..._orig'.
+    df_productionconstraints13['productname'] = np.nan
    
     # Create the final production constraints dataframe by unioning:
     # df_productionconstraints10 : Repairs at individual depots.       NOTE: This isn't using an adjusted repair value.
@@ -330,11 +344,10 @@ for account in df_selected_accounts['Corporate Code'].unique():
                                                 df_productionconstraints13[final_columns],
                                                 ])
     
-    #df_productionconstraints_final[df_productionconstraints_final['constraintvalue'] != df_productionconstraints_final['adjusted_constraintvalue']]
     df_productionconstraints_final['status'] = df_productionconstraints_final['original_status_field']
     df_productionconstraints_final['account_%s'%account] = df_productionconstraints_final['adjusted_constraintvalue']
     df_productionconstraints_final.drop(columns=['adjusted_constraintvalue'], inplace=True)
-
+    
     join_cols = ['facilityname', 'facilitynamegroupbehavior', 'productname',
            'productnamegroupbehavior', 'periodname', 'periodnamegroupbehavior',
            'bomname', 'bomnamegroupbehavior', 'processname',
@@ -347,7 +360,7 @@ for account in df_selected_accounts['Corporate Code'].unique():
                                                                         left_on=join_cols ,
                                                                         right_on=join_cols ,
                                                                         suffixes=('', '_DROP'))
-    
+        
     df_productionconstraints_orig.drop(df_productionconstraints_orig.filter(regex='_DROP$').columns, axis=1, inplace=True)
 
 #%%#################################################################################################
