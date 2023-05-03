@@ -204,25 +204,25 @@ r_i = returns / issues
 r_i.rename('Network R:I', inplace=True)
 
 # Transportation Cost - Issues
-tc_i = ols[['scenarioname', 'departingperiodname', 'destinationname', 'transportationcost']].copy()
+tc_i = ols[['scenarioname', 'departingperiodname', 'destinationname', 'shipmentcost']].copy()
 tc_i = tc_i[(tc_i['destinationname'].str.contains('I_')) & 
             (tc_i['departingperiodname'].str[-2:].astype(int) <= 12)]
-tc_i = tc_i.groupby(['scenarioname'])['transportationcost'].sum()
+tc_i = tc_i.groupby(['scenarioname'])['shipmentcost'].sum()
 tc_i.rename('Transportation Cost - Issues', inplace=True)
 
 # Transportation Cost - Returns
-tc_r = ols[['scenarioname', 'departingperiodname', 'originname', 'transportationcost']].copy()
+tc_r = ols[['scenarioname', 'departingperiodname', 'originname', 'shipmentcost']].copy()
 tc_r = tc_r[(tc_r['originname'].str.contains('R_')) & 
             (tc_r['departingperiodname'].str[-2:].astype(int) <= 12)]
-tc_r = tc_r.groupby(['scenarioname'])['transportationcost'].sum()
+tc_r = tc_r.groupby(['scenarioname'])['shipmentcost'].sum()
 tc_r.rename('Transportation Cost - Returns', inplace=True)
 
 # Transportation Cost - Transfers
-tc_t = ols[['scenarioname', 'departingperiodname', 'originname', 'destinationname', 'transportationcost']].copy()
+tc_t = ols[['scenarioname', 'departingperiodname', 'originname', 'destinationname', 'shipmentcost']].copy()
 tc_t = tc_t[~(tc_t['destinationname'].str.contains('I_')) & 
             ~(tc_t['originname'].str.contains('R_')) & 
             (tc_t['departingperiodname'].str[-2:].astype(int) <= 12)]
-tc_t = tc_t.groupby(['scenarioname'])['transportationcost'].sum()
+tc_t = tc_t.groupby(['scenarioname'])['shipmentcost'].sum()
 tc_t.rename('Transportation Cost - Transfers', inplace=True)
 
 # Total Fixed Cost
@@ -288,27 +288,29 @@ baseline   = 'SOIP (12 Month) (Dedicated Overrides MultiSourcing)'
 optimal    = 'SOIP Optimize (12 Month)'
 less_accts = [scenario for scenario in data.index if 'Less' in scenario]
 
-# For each account in less_accts, we want to subtract that row from baseline and give that
-# new row the index f"baseline minus {account}".
-
-subtracted_accts = dict()
+subtracted_dfs = dict()
 
 for acct in less_accts:
     acct_number = acct[-5:]
+    
     # Compare to Baseline
-    delta = data.loc[baseline] - data.loc[acct]
-    delta.name = f'Baseline minus {acct_number}'
-    subtracted_accts[delta.name] = pd.DataFrame(delta).T
+    delta = data.loc[acct] - data.loc[baseline]
+    delta.name = f'Removing {acct_number} - Baseline'
+    subtracted_dfs[delta.name] = pd.DataFrame(delta).T
     
     # Compare to Optimal (with reassignments allowed)
-    delta = data.loc[optimal] - data.loc[acct]
-    delta.name = f'Reassignment minus {acct_number}'
-    subtracted_accts[delta.name] = pd.DataFrame(delta).T
-
-delta_df = pd.concat([df for df in subtracted_accts.values()])
+    delta = data.loc[acct] - data.loc[optimal]
+    delta.name = f'Removing {acct_number} - Optimal'
+    subtracted_dfs[delta.name] = pd.DataFrame(delta).T
 
 
+# Combine the "subtracted" rows with the original dataset.
+delta_df = pd.concat([df for df in subtracted_dfs.values()])
+data_final = pd.concat([data, delta_df])
 
+print('Exporting data.')
+# Export
+data_final.to_excel('data_test_2023-05-02.xlsx')
 
 
 
