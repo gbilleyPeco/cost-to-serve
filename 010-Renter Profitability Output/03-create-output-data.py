@@ -1,7 +1,6 @@
-import datetime as dt
 import sqlalchemy as sal
-#from sqlalchemy import create_engine
 import pandas as pd
+import warnings
 from optilogic import pioneer
 
 ####################### BEGIN USER INPUTS #######################
@@ -12,19 +11,19 @@ DB_NAME = 'PECO 2023-05 SOIP Opt (Cost to Serve)' # Cosmic Frog Model Name
 
 ######################## END USER INPUTS ########################
 
-# Start time of the process
-START = dt.datetime.now()
-print('The process started on: %s' %START)
-
 #%%#################################################################################################
 
-# Code that makes connection to the Cosmic Frog database specified at the user input above
-api = pioneer.Api(auth_legacy = False, un=USER_NAME, appkey=APP_KEY)
-connection_str = api.sql_connection_info(DB_NAME)
-connection_string = 'postgresql://'+connection_str['raw']['user']+':'+connection_str['raw']['password']+'@'+connection_str['raw']['host']+':'+str(connection_str['raw']['port'])+'/'+connection_str['raw']['dbname']+'?sslmode=require'
-engine = sal.create_engine(connection_string)
-insp = sal.inspect(engine)
-conn = engine.connect()
+
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")     # Ignore the Cosmic Frog API warning.
+
+    # Code that makes connection to the Cosmic Frog database specified at the user input above
+    api = pioneer.Api(auth_legacy = False, un=USER_NAME, appkey=APP_KEY)
+    connection_str = api.sql_connection_info(DB_NAME)
+    connection_string = 'postgresql://'+connection_str['raw']['user']+':'+connection_str['raw']['password']+'@'+connection_str['raw']['host']+':'+str(connection_str['raw']['port'])+'/'+connection_str['raw']['dbname']+'?sslmode=require'
+    engine = sal.create_engine(connection_string)
+    insp = sal.inspect(engine)
+    conn = engine.connect()
 
 # List of all Cosmic Frog Model tables
 db_tables = insp.get_table_names()
@@ -160,8 +159,6 @@ fac.columns
 #        'new_pallet', 'queuepriority']
 # =============================================================================
 
-
-
 # ==================================================================================================
 #                        Pseudo-SQL diagram of where to get data
 #               Excel                       :                       Cosmic Frog
@@ -181,7 +178,6 @@ fac.columns
 # total depot cost variable CPI          G  :   B+C+E / issues
 # total depot cost fixed CPI             H  :   A / Issues
 # ==================================================================================================
-
 
 #%%#################################################################################################
 print('Calculating quantities and costs across all Opt scenarios.')
@@ -271,17 +267,16 @@ tvc_cpi.rename('Total Variable Cost CPI', inplace=True)
 tfc_cpi = tfc / issues
 tfc_cpi.rename('Total Fixed Cost CPI', inplace=True)
 
-
+# Total CPI
+t_cpi = tvc_cpi + tfc_cpi
+t_cpi.rename('Total Cost per Issue', inplace=True)
 
 #%%#################################################################################################
 print('Combining cost data into one DataFrame.')
 
-data = pd.concat([issues, returns, r_i, tc_i, tc_r, tc_t, tfc, tpc, thc, tic, trc, tdc, tvc_cpi, tfc_cpi], axis=1)
-#data.to_excel('data_test_2023-05-02.xlsx')
-
+data = pd.concat([issues, returns, r_i, tc_i, tc_r, tc_t, tfc, tpc, thc, tic, trc, tdc, tvc_cpi, tfc_cpi, t_cpi], axis=1)
 
 #%%#################################################################################################
-
 print('Calculating differences between baseline and scenarios with removed accounts.')
 
 baseline   = 'SOIP (12 Month) (Dedicated Overrides MultiSourcing)'
@@ -310,10 +305,10 @@ data_final = pd.concat([data, delta_df])
 
 print('Exporting data.')
 # Export
-data_final.to_excel('data_test_2023-05-02.xlsx')
+data_final.to_excel('CTS_top_20_2023-05-04.xlsx')
 
 
-
+#%%#################################################################################################
 
 
 
