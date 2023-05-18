@@ -305,10 +305,324 @@ data_final = pd.concat([data, delta_df])
 
 print('Exporting data.')
 # Export
-data_final.to_excel('CTS_top_20_2023-05-04.xlsx')
+data_final.to_excel('010-Renter Profitability Output/CTS_top_20_2023-05-16.xlsx')
 
 
 #%%#################################################################################################
+
+# Investigate why transportation costs seem off.
+cols_ = ['scenarioname', 'departingperiodname', 'destinationname', 'originname',
+         'shipmentcost', 'flowtype', 'sourcingcost', 'transportationcost', 
+         'dutycost', 'intransitholdingcost', 'totalcost']
+
+# Transportation Cost - Issues
+tc_i_ = ols[cols_].copy()
+tc_i_ = tc_i_[(tc_i_['destinationname'].str.contains('I_')) & 
+              (tc_i_['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_i_['costtype'] = 'Issues'
+
+# Transportation Cost - Returns
+tc_r_ = ols[cols_].copy()
+tc_r_ = tc_r_[(tc_r_['originname'].str.contains('R_')) & 
+              (tc_r_['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_r_['costtype'] = 'Returns'
+
+# Transportation Cost - Transfers
+tc_t_ = ols[cols_].copy()
+tc_t_ = tc_t_[~(tc_t_['destinationname'].str.contains('I_')) & 
+              ~(tc_t_['originname'].str.contains('R_')) & 
+               (tc_t_['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_t_['costtype'] = 'Transfers'
+
+tc_all_ = pd.concat([tc_i_, tc_r_, tc_t_])
+
+tc_all_grouped = tc_all_.groupby(['scenarioname','costtype'])[['shipmentcost', 'sourcingcost', 'transportationcost', 'dutycost', 'intransitholdingcost', 'totalcost']].sum().reset_index()
+tc_all_grouped.to_excel('010-Renter Profitability Output/all_costs_2023-05-17.xlsx')
+
+#%%#################################################################################################
+
+
+'''
+Add sourcing costs.
+'''
+
+
+print('Calculating quantities and costs across all Opt scenarios.')
+
+# Issues
+issues = ols[['scenarioname', 'departingperiodname', 'destinationname', 'flowquantity']].copy()
+issues = issues[(issues['destinationname'].str.contains('I_')) & (issues['departingperiodname'].str[-2:].astype(int) <= 12)]
+issues = issues.groupby(['scenarioname'])['flowquantity'].sum()
+issues.rename('Issues', inplace=True)
+
+
+# Returns
+returns = ols[['scenarioname', 'departingperiodname', 'originname', 'flowquantity']].copy()
+returns = returns[(returns['originname'].str.contains('R_')) & (returns['departingperiodname'].str[-2:].astype(int) <= 12)]
+returns = returns.groupby(['scenarioname'])['flowquantity'].sum()
+returns.rename('Returns', inplace=True)
+
+# Network R:I
+r_i = returns / issues
+r_i.rename('Network R:I', inplace=True)
+
+# Transportation Cost - Issues with Sourcing Cost
+tc_i = ols[['scenarioname', 'departingperiodname', 'destinationname', 'shipmentcost', 'sourcingcost']].copy()
+tc_i['newcost'] = tc_i['shipmentcost'] + tc_i['sourcingcost']
+tc_i = tc_i[(tc_i['destinationname'].str.contains('I_')) & 
+            (tc_i['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_i = tc_i.groupby(['scenarioname'])['newcost'].sum()
+tc_i.rename('Transportation Cost - Issues', inplace=True)
+
+# Transportation Cost - Returns
+tc_r = ols[['scenarioname', 'departingperiodname', 'originname', 'shipmentcost']].copy()
+tc_r = tc_r[(tc_r['originname'].str.contains('R_')) & 
+            (tc_r['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_r = tc_r.groupby(['scenarioname'])['shipmentcost'].sum()
+tc_r.rename('Transportation Cost - Returns', inplace=True)
+
+# Transportation Cost - Transfers
+tc_t = ols[['scenarioname', 'departingperiodname', 'originname', 'destinationname', 'shipmentcost']].copy()
+tc_t = tc_t[~(tc_t['destinationname'].str.contains('I_')) & 
+            ~(tc_t['originname'].str.contains('R_')) & 
+            (tc_t['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_t = tc_t.groupby(['scenarioname'])['shipmentcost'].sum()
+tc_t.rename('Transportation Cost - Transfers', inplace=True)
+
+
+# Total Fixed Cost
+tfc = ofs[['scenarioname', 'periodname', 'operatingcost']].copy()
+tfc = tfc[tfc['periodname'].str[-2:].astype(int) <= 12]
+tfc = tfc.groupby(['scenarioname'])['operatingcost'].sum()
+tfc.rename('Total Fixed Cost', inplace=True)
+
+# Total Painting Cost
+mfrs = list(fac[fac['depottype']=='Manufacturing']['facilityname'])
+tpc = ols[['scenarioname', 'departingperiodname', 'originname', 'sourcingcost']].copy()
+tpc = tpc[~(tpc['originname'].isin(mfrs)) &
+          (tpc['departingperiodname'].str[-2:].astype(int) <= 12)]
+tpc = tpc.groupby(['scenarioname'])['sourcingcost'].sum()
+tpc.rename('Total Painting Cost', inplace=True)
+
+# Total Depot Handling Cost
+thc = ows[['scenarioname', 'periodname', 'inboundhandlingcost', 'outboundhandlingcost']].copy()
+thc['totalhandlingcost'] = thc['inboundhandlingcost'] + thc['outboundhandlingcost']
+thc = thc[thc['periodname'].str[-2:].astype(int) <= 12]
+thc = thc.groupby(['scenarioname'])['totalhandlingcost'].sum()
+thc.rename('Total Depot Handling Cost', inplace=True)
+
+# Total Inventory Carrying Cost
+tic = ois[['scenarioname', 'periodname', 'totalinventorycost']].copy()
+tic = tic[tic['periodname'].str[-2:].astype(int) <= 12]
+tic = tic.groupby(['scenarioname'])['totalinventorycost'].sum()
+tic.rename('Total Inventory Carrying Cost', inplace=True)
+
+# Total Repair Cost
+trc = ops[['scenarioname', 'startingperiodname', 'bomname', 'productioncost']]
+trc = trc[(trc['bomname'] == 'BOM_RFU_REPAIR') &
+          (trc['startingperiodname'].str[-2:].astype(int) <= 12)]
+trc = trc.groupby(['scenarioname'])['productioncost'].sum()
+trc.rename('Total Repair Cost', inplace=True)
+
+# Total Depot Cost
+tdc = tfc + tpc + thc + trc
+tdc.rename('Total Depot Cost', inplace=True)
+
+# Total Variable Cost CPI
+tvc_cpi = (tpc + thc + trc) / issues
+tvc_cpi.rename('Total Variable Cost CPI', inplace=True)
+
+# Total Fixed Cost CPI
+tfc_cpi = tfc / issues
+tfc_cpi.rename('Total Fixed Cost CPI', inplace=True)
+
+# Total CPI
+t_cpi = tvc_cpi + tfc_cpi
+t_cpi.rename('Total Cost per Issue', inplace=True)
+
+
+print('Combining cost data into one DataFrame.')
+
+data = pd.concat([issues, returns, r_i, tc_i, tc_r, tc_t, tfc, tpc, thc, tic, trc, tdc, tvc_cpi, tfc_cpi, t_cpi], axis=1)
+
+print('Calculating differences between baseline and scenarios with removed accounts.')
+
+baseline   = 'SOIP (12 Month) (Dedicated Overrides MultiSourcing)'
+optimal    = 'SOIP Optimize (12 Month)'
+less_accts = [scenario for scenario in data.index if 'Less' in scenario]
+
+subtracted_dfs = dict()
+
+for acct in less_accts:
+    acct_number = acct[-5:]
+    
+    # Compare to Baseline
+    delta = data.loc[acct] - data.loc[baseline]
+    delta.name = f'Removing {acct_number} - Baseline'
+    subtracted_dfs[delta.name] = pd.DataFrame(delta).T
+    
+    # Compare to Optimal (with reassignments allowed)
+    delta = data.loc[acct] - data.loc[optimal]
+    delta.name = f'Removing {acct_number} - Optimal'
+    subtracted_dfs[delta.name] = pd.DataFrame(delta).T
+
+
+# Combine the "subtracted" rows with the original dataset.
+delta_df = pd.concat([df for df in subtracted_dfs.values()])
+data_final = pd.concat([data, delta_df])
+
+print('Exporting data.')
+# Export
+data_final.to_excel('010-Renter Profitability Output/CTS_issues_include_sourcing_costs_2023-05-17.xlsx')
+
+
+#%%#################################################################################################
+
+
+'''
+Add sourcing costs.
+'''
+
+
+print('Calculating quantities and costs across all Opt scenarios.')
+
+# Issues
+issues = ols[['scenarioname', 'departingperiodname', 'destinationname', 'flowquantity']].copy()
+issues = issues[(issues['destinationname'].str.contains('I_')) & (issues['departingperiodname'].str[-2:].astype(int) <= 12)]
+issues = issues.groupby(['scenarioname'])['flowquantity'].sum()
+issues.rename('Issues', inplace=True)
+
+
+# Returns
+returns = ols[['scenarioname', 'departingperiodname', 'originname', 'flowquantity']].copy()
+returns = returns[(returns['originname'].str.contains('R_')) & (returns['departingperiodname'].str[-2:].astype(int) <= 12)]
+returns = returns.groupby(['scenarioname'])['flowquantity'].sum()
+returns.rename('Returns', inplace=True)
+
+# Network R:I
+r_i = returns / issues
+r_i.rename('Network R:I', inplace=True)
+
+# Transportation Cost - Issues with Sourcing Cost
+tc_i = ols[['scenarioname', 'departingperiodname', 'destinationname', 'shipmentcost', 'sourcingcost', 'transportationcost']].copy()
+tc_i['newcost'] = tc_i['shipmentcost'] + tc_i['sourcingcost'] + tc_i['transportationcost']
+tc_i = tc_i[(tc_i['destinationname'].str.contains('I_')) & 
+            (tc_i['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_i = tc_i.groupby(['scenarioname'])['newcost'].sum()
+tc_i.rename('Transportation Cost - Issues', inplace=True)
+
+# Transportation Cost - Returns
+tc_r = ols[['scenarioname', 'departingperiodname', 'originname', 'shipmentcost', 'sourcingcost', 'transportationcost']].copy()
+tc_r['newcost'] = tc_r['shipmentcost'] + tc_r['sourcingcost'] + tc_r['transportationcost']
+tc_r = tc_r[(tc_r['originname'].str.contains('R_')) & 
+            (tc_r['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_r = tc_r.groupby(['scenarioname'])['newcost'].sum()
+tc_r.rename('Transportation Cost - Returns', inplace=True)
+
+# Transportation Cost - Transfers
+tc_t = ols[['scenarioname', 'departingperiodname', 'originname', 'destinationname', 'shipmentcost', 'sourcingcost', 'transportationcost']].copy()
+tc_t['newcost'] = tc_t['shipmentcost'] + tc_t['sourcingcost'] + tc_t['transportationcost']
+tc_t = tc_t[~(tc_t['destinationname'].str.contains('I_')) & 
+            ~(tc_t['originname'].str.contains('R_')) & 
+            (tc_t['departingperiodname'].str[-2:].astype(int) <= 12)]
+tc_t = tc_t.groupby(['scenarioname'])['newcost'].sum()
+tc_t.rename('Transportation Cost - Transfers', inplace=True)
+
+
+# Total Fixed Cost
+tfc = ofs[['scenarioname', 'periodname', 'operatingcost']].copy()
+tfc = tfc[tfc['periodname'].str[-2:].astype(int) <= 12]
+tfc = tfc.groupby(['scenarioname'])['operatingcost'].sum()
+tfc.rename('Total Fixed Cost', inplace=True)
+
+# Total Painting Cost
+mfrs = list(fac[fac['depottype']=='Manufacturing']['facilityname'])
+tpc = ols[['scenarioname', 'departingperiodname', 'originname', 'sourcingcost']].copy()
+tpc = tpc[~(tpc['originname'].isin(mfrs)) &
+          (tpc['departingperiodname'].str[-2:].astype(int) <= 12)]
+tpc = tpc.groupby(['scenarioname'])['sourcingcost'].sum()
+tpc.rename('Total Painting Cost', inplace=True)
+
+# Total Depot Handling Cost
+thc = ows[['scenarioname', 'periodname', 'inboundhandlingcost', 'outboundhandlingcost']].copy()
+thc['totalhandlingcost'] = thc['inboundhandlingcost'] + thc['outboundhandlingcost']
+thc = thc[thc['periodname'].str[-2:].astype(int) <= 12]
+thc = thc.groupby(['scenarioname'])['totalhandlingcost'].sum()
+thc.rename('Total Depot Handling Cost', inplace=True)
+
+# Total Inventory Carrying Cost
+tic = ois[['scenarioname', 'periodname', 'totalinventorycost']].copy()
+tic = tic[tic['periodname'].str[-2:].astype(int) <= 12]
+tic = tic.groupby(['scenarioname'])['totalinventorycost'].sum()
+tic.rename('Total Inventory Carrying Cost', inplace=True)
+
+# Total Repair Cost
+trc = ops[['scenarioname', 'startingperiodname', 'bomname', 'productioncost']]
+trc = trc[(trc['bomname'] == 'BOM_RFU_REPAIR') &
+          (trc['startingperiodname'].str[-2:].astype(int) <= 12)]
+trc = trc.groupby(['scenarioname'])['productioncost'].sum()
+trc.rename('Total Repair Cost', inplace=True)
+
+#Total Transportation Cost
+ttc = tc_i + tc_r + tc_t
+ttc.rename('Total Transportation Cost', inplace=True)
+
+# Total Depot Cost
+tdc = tfc + tpc + thc + trc
+tdc.rename('Total Depot Cost', inplace=True)
+
+# Total Variable Cost CPI
+tvc_cpi = (tpc + thc + trc) / issues
+tvc_cpi.rename('Total Variable Cost CPI', inplace=True)
+
+# Total Fixed Cost CPI
+tfc_cpi = tfc / issues
+tfc_cpi.rename('Total Fixed Cost CPI', inplace=True)
+
+# Total CPI
+t_cpi = tvc_cpi + tfc_cpi
+t_cpi.rename('Total Cost per Issue', inplace=True)
+
+
+print('Combining cost data into one DataFrame.')
+
+data = pd.concat([issues, returns, r_i, tc_i, tc_r, tc_t, ttc, tfc, tpc, thc, tic, trc, tdc, tvc_cpi, tfc_cpi, t_cpi], axis=1)
+
+print('Calculating differences between baseline and scenarios with removed accounts.')
+
+baseline   = 'SOIP (12 Month) (Dedicated Overrides MultiSourcing)'
+optimal    = 'SOIP Optimize (12 Month)'
+less_accts = [scenario for scenario in data.index if 'Less' in scenario]
+
+subtracted_dfs = dict()
+
+for acct in less_accts:
+    acct_number = acct[-5:]
+    
+    # Compare to Baseline
+    delta = data.loc[acct] - data.loc[baseline]
+    delta.name = f'Removing {acct_number} - Baseline'
+    subtracted_dfs[delta.name] = pd.DataFrame(delta).T
+    
+    # Compare to Optimal (with reassignments allowed)
+    delta = data.loc[acct] - data.loc[optimal]
+    delta.name = f'Removing {acct_number} - Optimal'
+    subtracted_dfs[delta.name] = pd.DataFrame(delta).T
+
+
+# Combine the "subtracted" rows with the original dataset.
+delta_df = pd.concat([df for df in subtracted_dfs.values()])
+data_final = pd.concat([data, delta_df])
+
+print('Exporting data.')
+# Export
+data_final.to_excel('010-Renter Profitability Output/CTS_include_sourcing_and_transportation_costs_2023-05-17.xlsx')
+
+
+
+
+
+
 
 
 
