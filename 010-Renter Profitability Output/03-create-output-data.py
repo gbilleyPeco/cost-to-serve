@@ -289,9 +289,13 @@ trc = trc[(trc['bomname'] == 'BOM_RFU_REPAIR') &
 trc = trc.groupby(['scenarioname'])['productioncost'].sum()
 trc.rename('Depot Cost - Repair', inplace=True)
 
-#Total Transportation Cost
+# Total Transportation Cost
 ttc = tc_i + tc_r + tc_t
 ttc.rename('Total Transportation Cost: Issues + Returns + Transfers', inplace=True)
+
+# Total Transportation Cost CPI
+ttc_cpi = ttc / issues
+ttc_cpi.rename('Total Transportation Cost per Issue', inplace=True)
 
 # Total Depot Cost
 tdc = tfc + tpc + thc + trc
@@ -305,8 +309,12 @@ tvc_cpi.rename('Total Variable Cost CPI', inplace=True)
 tfc_cpi = tfc / issues
 tfc_cpi.rename('Total Fixed Cost CPI', inplace=True)
 
-# Total CPI
-t_cpi = tvc_cpi + tfc_cpi
+# Total Depot CPI
+tdc_cpi = tvc_cpi + tfc_cpi
+tdc_cpi.rename('Total Depot Cost per Issue', inplace=True)
+
+# Total Cost per Issue
+t_cpi = ttc_cpi + tdc_cpi
 t_cpi.rename('Total Cost per Issue', inplace=True)
 
 #%%#################################################################################################
