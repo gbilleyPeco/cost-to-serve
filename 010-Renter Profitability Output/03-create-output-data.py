@@ -343,14 +343,14 @@ scenario_data_final = pd.concat([scenario_data, delta_df])
 
 print('Exporting the Scenario Dataframe.')
 # Export
-scenario_data_final.to_excel('010-Renter Profitability Output/CTS_top_20_2023-05-18.xlsx')
+scenario_data_final.to_excel('010-Renter Profitability Output/CTS_top_20_2023-05-22.xlsx')
 
 
 #%%#################################################################################################
 
 # Calculate Issues and Returns costs for each customer based on the 
-# OptimizationFlowSummary (Issues and Costs) and 
-# ProductionConstraints (Returns) and ABC (Costs) tables.
+# OptimizationFlowSummary (Issue Count and Issues Costs) and 
+# ProductionConstraints (Return Count) and OptimizationFlowSummary (Return Costs) tables.
 
 optimal_scenario = 'SOIP Optimize (12 Month)'
 
