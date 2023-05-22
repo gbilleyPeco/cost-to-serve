@@ -447,7 +447,7 @@ return_location_costs = return_location_costs.merge(customers[['corpcode', 'Cust
 tc_r_cn = return_location_costs[['Customer', 'Return Cost']].groupby(['Customer']).sum()
 tc_r_cn.rename(columns={'Return Cost':'Transportation Cost - Returns'}, inplace=True)
 
-
+#%%#################################################################################################
 
 
 
