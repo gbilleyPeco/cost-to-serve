@@ -343,7 +343,7 @@ scenario_data_final = pd.concat([scenario_data, delta_df])
 
 print('Exporting the Scenario Dataframe.')
 # Export
-scenario_data_final.to_excel('010-Renter Profitability Output/CTS_top_20_2023-05-22.xlsx')
+scenario_data_final.to_excel('010-Renter Profitability Output/troubleshooting/scenario_data_2023-05-22.xlsx')
 
 
 #%%#################################################################################################
@@ -376,7 +376,7 @@ tc_i_cn['Transportation Cost - Issues'] = tc_i_cn['shipmentcost'] + tc_i_cn['sou
 tc_i_cn = tc_i_cn.merge(customers, how='inner', left_on='destinationname', right_on='customername')
 
 # Group by Customer (Corp Code + Corp Name)
-tc_i_cn = tc_i_cn.groupby(['Customer'])['Transportation Cost - Issues'].sum()
+tc_i_cn = tc_i_cn.groupby(['corpcode'])['Transportation Cost - Issues'].sum()
 
 ########################## Current Network - Transportation Costs, Returns #########################
 
@@ -444,57 +444,100 @@ return_location_costs = return_location_costs.merge(customers[['corpcode', 'Cust
                                                     right_on='corpcode')
 
 # Group by Customer (Corp Code + Corp Name)
-tc_r_cn = return_location_costs[['Customer', 'Return Cost']].groupby(['Customer']).sum()
+tc_r_cn = return_location_costs[['corpcode', 'Return Cost']].groupby(['corpcode']).sum()
 tc_r_cn.rename(columns={'Return Cost':'Transportation Cost - Returns'}, inplace=True)
 
 #%%#################################################################################################
 
+# Create the "Account" DataFrame. 
+# Each row should be a corporate account.
+# The following are the columns:
+#   Issues
+#   Returns
+#   R:I
+#   In-Network Cost-to-Issue            (Calculated directly) as tc_i_cn
+#   In-Network Cost-to-Return           (Calculated directly) as tc_r_cn
+#   In-Network Cost-to-Transfer         (Calculated indirectly)
+#   Out-of-Network Cost-to-Issue        (Calculated directly)
+#   Out-of-Network Cost-to-Return       (Calculated directly)
+#   Out-of-Network Cost-to-Transfer     (Calculated directly)
 
+# Create the customer dataframe
+customer_data = pd.DataFrame()
 
+for corp in corp_codes:
+    scenario_data_index = f'Removing {corp} - Optimal'
+    
+    # Account Issues
+    corp_issues = -1*scenario_data_final.loc[scenario_data_index]['Issues']
+    
+    # Account Returns
+    corp_returns = -1*scenario_data_final.loc[scenario_data_index]['Returns']
+    
+    # Account R:I
+    corp_ri = corp_returns / corp_issues
+    
+    # Out-of-Network Transportation Cost - Issues
+    oon_tc_i = -1*scenario_data_final.loc[scenario_data_index]['Transportation Cost - Issues']
+    
+    # Out-of-Network Transportation Cost - Returns
+    oon_tc_r = -1*scenario_data_final.loc[scenario_data_index]['Transportation Cost - Returns']
+    
+    # Out-of-Network Transportation Cost - Transfers
+    oon_tc_t = -1*scenario_data_final.loc[scenario_data_index]['Transportation Cost - Transfers']
+    
+    new_row = pd.DataFrame(data=[[corp_issues, corp_returns, corp_ri, oon_tc_i, oon_tc_r, oon_tc_t]],
+                           columns=['Account Issues',
+                                    'Account Returns',
+                                    'Account R:I',
+                                    'Optimized Network Transportation Cost - Issues',
+                                    'Optimized Network Transportation Cost - Returns',
+                                    'Optimized Network Transportation Cost - Transfers'],
+                           index=[corp])
+    customer_data = pd.concat([customer_data, new_row])
 
+# In-Network Transportation Cost - Issues
+# In-Network Transportation Cost - Returns
+customer_data = pd.concat([customer_data, tc_i_cn, tc_r_cn], axis=1)
+customer_data.rename(columns={'Transportation Cost - Issues':'Current Network Transportation Cost - Issues',
+                              'Transportation Cost - Returns':'Current Network Transportation Cost - Returns'},
+                     inplace=True)
 
+# In-Network Transportation Cost - Transfers.
+# Note - doing the math this way so it's easier to read.
+A = customer_data['Current Network Transportation Cost - Issues']
+B = customer_data['Current Network Transportation Cost - Returns']
+C = customer_data['Optimized Network Transportation Cost - Issues']
+D = customer_data['Optimized Network Transportation Cost - Returns']
+E = customer_data['Optimized Network Transportation Cost - Transfers']
 
+customer_data['Current Network Transportation Cost - Transfers'] = C+D+E - (A+B)
 
+# Create "Cost per Issue" columns.
+i = customer_data['Account Issues']
+customer_data['Current Network Transportation Cost - Issues - CPI'] = customer_data['Current Network Transportation Cost - Issues'] / i
+customer_data['Current Network Transportation Cost - Returns - CPI'] = customer_data['Current Network Transportation Cost - Returns'] / i
+customer_data['Current Network Transportation Cost - Transfers - CPI'] = customer_data['Current Network Transportation Cost - Transfers'] / i
+customer_data['Optimized Network Transportation Cost - Issues - CPI'] = customer_data['Optimized Network Transportation Cost - Issues'] / i
+customer_data['Optimized Network Transportation Cost - Returns - CPI'] = customer_data['Optimized Network Transportation Cost - Returns'] / i
+customer_data['Optimized Network Transportation Cost - Transfers - CPI'] = customer_data['Optimized Network Transportation Cost - Transfers'] / i
 
+customer_data = customer_data.merge(customers[['corpcode', 'Customer']].drop_duplicates(),
+                           left_index=True,
+                           right_on='corpcode')
+customer_data.set_index(['corpcode', 'Customer'], inplace=True)
 
-
-
-
-
-
+customer_data.to_excel('010-Renter Profitability Output/troubleshooting/customer_data_2023-05-22.xlsx')
 
 #%%#################################################################################################
 
-ols_temp = ols.head(100)
+'''
+Add:
+    Fixed, variable, total depot costs (as differenve between optimized with customer and optimized without customer)
+    total transportation cost
+    
 
-
-
-return_location_test = 'R_USA39601_43365'
-return_costs_test = ols[(ols['scenarioname'] == optimal_scenario) &
-                        (ols['originname'] == return_location_test)]
-
-
-rl_tests_example = ols[(ols['scenarioname'] == optimal_scenario) &
-                       (ols['departingperiodname'] == 'Period 01') &
-                       (ols['originname'] == return_location_test)].copy()
-
-
-
-# Look for customer locations that returned to multiple depots.
-
-rl_tests = ols[(ols['scenarioname'] == optimal_scenario) &
-               (ols['departingperiodname'] == 'Period 01') &
-               (ols['originname'].str[0] == 'R')][['originname', 'destinationname']].copy().drop_duplicates()
-
-
-rl_sizes = rl_tests.groupby('originname').size()
-return_locs_multiple_depots = rl_sizes[rl_sizes > 1]
-
-
-
-
-
-
+'''
 
 
 
