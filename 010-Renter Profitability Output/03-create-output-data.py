@@ -231,8 +231,8 @@ r_i = returns / issues
 r_i.rename('Network R:I', inplace=True)
 
 # Transportation Cost - Issues
-tc_i = ols[['scenarioname', 'departingperiodname', 'destinationname', 'shipmentcost', 'sourcingcost', 'transportationcost']].copy()
-tc_i['newcost'] = tc_i['shipmentcost'] + tc_i['sourcingcost'] + tc_i['transportationcost']
+tc_i = ols[['scenarioname', 'departingperiodname', 'destinationname', 'shipmentcost', 'transportationcost']].copy()
+tc_i['newcost'] = tc_i['shipmentcost'] + tc_i['transportationcost']
 tc_i = tc_i[(tc_i['destinationname'].str.contains('I_')) & 
             (tc_i['departingperiodname'].str[-2:].astype(int) <= 12)]
 tc_i = tc_i.groupby(['scenarioname'])['newcost'].sum()
@@ -293,6 +293,18 @@ trc.rename('Depot Cost - Repair', inplace=True)
 ttc = tc_i + tc_r + tc_t
 ttc.rename('Total Transportation Cost: Issues + Returns + Transfers', inplace=True)
 
+# Transportation Issues Cost CPI 
+tc_i_cpi = tc_i / issues
+tc_i_cpi.rename('Transportation Cost - Issues CPI', inplace=True)
+
+# Transportation Returns Cost CPI
+tc_r_cpi = tc_r / issues
+tc_r_cpi.rename('Transportation Cost - Returns CPI', inplace=True)
+
+# Transportation Transfers Cost CPI
+tc_t_cpi = tc_t / issues
+tc_t_cpi.rename('Transportation Cost - Transfers CPI', inplace=True)
+
 # Total Transportation Cost CPI
 ttc_cpi = ttc / issues
 ttc_cpi.rename('Total Transportation Cost per Issue', inplace=True)
@@ -303,11 +315,11 @@ tdc.rename('Total Depot Cost: Fixed + Painting + Handling + Repair', inplace=Tru
 
 # Total Variable Cost CPI
 tvc_cpi = (tpc + thc + trc) / issues
-tvc_cpi.rename('Total Variable Cost CPI', inplace=True)
+tvc_cpi.rename('Total Variable Depot Cost CPI', inplace=True)
 
 # Total Fixed Cost CPI
 tfc_cpi = tfc / issues
-tfc_cpi.rename('Total Fixed Cost CPI', inplace=True)
+tfc_cpi.rename('Total Fixed Depot Cost CPI', inplace=True)
 
 # Total Depot CPI
 tdc_cpi = tvc_cpi + tfc_cpi
@@ -351,7 +363,7 @@ scenario_data_final = pd.concat([scenario_data, delta_df])
 
 print('Exporting the Scenario Dataframe.')
 # Export
-scenario_data_final.to_excel('010-Renter Profitability Output/troubleshooting/scenario_data_2023-05-22.xlsx')
+scenario_data_final.to_excel('troubleshooting/scenario_data_2023-05-23.xlsx')
 
 
 #%%#################################################################################################
@@ -519,7 +531,13 @@ C = customer_data['Optimized Network Transportation Cost - Issues']
 D = customer_data['Optimized Network Transportation Cost - Returns']
 E = customer_data['Optimized Network Transportation Cost - Transfers']
 
-customer_data['Current Network Transportation Cost - Transfers'] = C+D+E - (A+B)
+# Increase costs above the optimal to account for operational ineffeciencies. 
+# Note: eps = 0 is no change. eps = 0.1 is a 10% increase in costs.
+eps = 0.25
+F = (C+D+E)*eps
+customer_data['Current Network Transportation Costs - Ops Ineffeciencies'] = F
+
+customer_data['Current Network Transportation Cost - Transfers'] = (C+D+E+F) - (A+B)
 
 # Create "Cost per Issue" columns.
 i = customer_data['Account Issues']
@@ -535,17 +553,11 @@ customer_data = customer_data.merge(customers[['corpcode', 'Customer']].drop_dup
                            right_on='corpcode')
 customer_data.set_index(['corpcode', 'Customer'], inplace=True)
 
-customer_data.to_excel('010-Renter Profitability Output/troubleshooting/customer_data_2023-05-22.xlsx')
+customer_data.to_excel('troubleshooting/customer_data_2023-05-23.xlsx')
 
 #%%#################################################################################################
 
-'''
-Add:
-    Fixed, variable, total depot costs (as differenve between optimized with customer and optimized without customer)
-    total transportation cost
-    
 
-'''
 
 
 
