@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="2022.1">
+<AlteryxDocument yxmdVer="2022.3">
   <Nodes>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
@@ -16,7 +16,7 @@
     </Node>
     <Node ToolID="42">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="534" y="90" />
+        <Position x="548" y="103" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -33,7 +33,7 @@
     </Node>
     <Node ToolID="45">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="548" y="272" />
+        <Position x="562" y="285" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -50,7 +50,7 @@
     </Node>
     <Node ToolID="46">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="536" y="416" />
+        <Position x="550" y="429" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -67,7 +67,7 @@
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="536" y="560" />
+        <Position x="550" y="573" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -84,7 +84,7 @@
     </Node>
     <Node ToolID="48">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="536" y="704" />
+        <Position x="550" y="717" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -101,7 +101,7 @@
     </Node>
     <Node ToolID="49">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="690" y="150" width="276" height="24" />
+        <Position x="704" y="163" width="276" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -121,7 +121,7 @@
     </Node>
     <Node ToolID="50">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="690" y="186" width="156" height="120" />
+        <Position x="704" y="199" width="156" height="120" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -149,7 +149,7 @@ scenario items</Text>
     </Node>
     <Node ToolID="51">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="690" y="54" width="540" height="84" />
+        <Position x="704" y="67" width="540" height="84" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -173,7 +173,7 @@ User should either:
     </Node>
     <Node ToolID="38">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="40" y="41" width="246" height="822" />
+        <Position x="54" y="54" width="246" height="822" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -191,7 +191,7 @@ User should either:
       <ChildNodes>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="65" y="90" />
+            <Position x="79" y="103" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -244,7 +244,7 @@ fr...</DefaultAnnotationText>
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="77" y="270" />
+            <Position x="91" y="283" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -319,7 +319,7 @@ from cu...</DefaultAnnotationText>
         </Node>
         <Node ToolID="35">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="78" y="414" />
+            <Position x="92" y="427" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -361,7 +361,7 @@ from sc...</DefaultAnnotationText>
         </Node>
         <Node ToolID="36">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="77" y="558" />
+            <Position x="91" y="571" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -401,7 +401,7 @@ Query=select scenarioitemassignmen...</DefaultAnnotationText>
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="77" y="702" />
+            <Position x="91" y="715" />
           </GuiSettings>
           <Properties>
             <Configuration>

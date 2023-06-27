@@ -342,7 +342,7 @@ scenario_data = pd.concat([issues, returns, r_i, tc_i, tc_r, tc_t, ttc, tfc, tpc
 #%%#################################################################################################
 print('Calculating differences between baseline and scenarios with removed accounts.')
 
-baseline   = 'SOIP (12 Month) (Dedicated Overrides MultiSourcing)'
+baseline   = 'SOIP Default Assignments (12 Month)'
 optimal    = 'SOIP Optimize (12 Month)'
 less_accts = [scenario for scenario in scenario_data.index if 'Less' in scenario]
 
