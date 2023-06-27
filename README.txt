@@ -40,6 +40,7 @@ less-account-scenario-building/
 	4_Account Model Creation.yxmc
 	Account List.xlsx
 	README.txt
+	requirements.txt
 	TransferMatric_RenterToReturnLocation.xlsx   (NOTE: This file gets created when you run "01-create-transfer-matrix-excel.py")
 ---------------------------------------------------------------------------------------------------
 To run this code, do the following:
@@ -53,3 +54,7 @@ To run this code, do the following:
 	5. Update the user inputs in 1_CF_Inputs.yxmc and SAVE the file.
 	6. Update the user inputs in 3_Return Profile Creation - Output.yxmc and SAVE the file.
 	7. Update the user inputs in 4_Account Model Creation.yxmc and RUN the file.
+
+You can now run the Cosmic Frog model with all of the "account_#####" scenarios selected.
+
+	8. Run 03-create-output-data.py to calculate the cost to serve for all selected corporate codes. (Can be done in Atlas).
