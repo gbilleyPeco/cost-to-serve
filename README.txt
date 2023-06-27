@@ -1,4 +1,4 @@
-This README document contains instructions for the 'Less Account Scenario Building' 
+This README document contains instructions for the 'Cost to Serve' 
 part of Renter Profitability.
 ---------------------------------------------------------------------------------------------------
 The purpose of this codebase is to do the following tasks:
@@ -34,6 +34,7 @@ less-account-scenario-building/
 	  .
 	01-create-transfer-matrix-excel.py
 	02-create-user-defined-columns.py
+	03-create-output-data.py
 	1_CF_Inputs.yxmc
 	3_Return Profile Creation - Output.yxmc
 	4_Account Model Creation.yxmc
