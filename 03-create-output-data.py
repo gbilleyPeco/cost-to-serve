@@ -7,6 +7,7 @@ from optilogic import pioneer
 USER_NAME = 'graham.billey'
 APP_KEY = 'op_NWQ3YjQ0NjktNTBjOC00M2JkLWE4NWEtNjM1NDBmODA5ODEw'
 DB_NAME = 'PECO 2023-05 SOIP Opt (Cost to Serve)' # Cosmic Frog Model Name
+OUTPUT_FILE_NAME_EXTENSION = ''
 ######################## END USER INPUTS ########################
 
 #%%#################################################################################################
@@ -553,7 +554,7 @@ customer_data = customer_data.merge(customers[['corpcode', 'Customer']].drop_dup
                            right_on='corpcode')
 customer_data.set_index(['corpcode', 'Customer'], inplace=True)
 
-customer_data.to_excel('troubleshooting/customer_data_2023-05-23.xlsx')
+customer_data.to_excel('010-Renter Profitability Output/customer_data_2023-05-23.xlsx')
 
 #%%#################################################################################################
 
