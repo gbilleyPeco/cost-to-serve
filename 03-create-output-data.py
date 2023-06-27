@@ -1,13 +1,17 @@
 import sqlalchemy as sal
 import pandas as pd
 import warnings
+import datetime
 from optilogic import pioneer
 
 ####################### BEGIN USER INPUTS #######################
 USER_NAME = 'graham.billey'
 APP_KEY = 'op_NWQ3YjQ0NjktNTBjOC00M2JkLWE4NWEtNjM1NDBmODA5ODEw'
 DB_NAME = 'PECO 2023-05 SOIP Opt (Cost to Serve)' # Cosmic Frog Model Name
-OUTPUT_FILE_NAME_EXTENSION = ''
+
+# Increase costs above the optimal to account for operational ineffeciencies. 
+# Note: eps = 0 is no change. eps = 0.1 is a 10% increase in costs.
+EPS = 0.25
 ######################## END USER INPUTS ########################
 
 #%%#################################################################################################
@@ -532,10 +536,8 @@ C = customer_data['Optimized Network Transportation Cost - Issues']
 D = customer_data['Optimized Network Transportation Cost - Returns']
 E = customer_data['Optimized Network Transportation Cost - Transfers']
 
-# Increase costs above the optimal to account for operational ineffeciencies. 
-# Note: eps = 0 is no change. eps = 0.1 is a 10% increase in costs.
-eps = 0.25
-F = (C+D+E)*eps
+# Account for operational innefficiencies.
+F = (C+D+E)*EPS
 customer_data['Current Network Transportation Costs - Ops Ineffeciencies'] = F
 
 customer_data['Current Network Transportation Cost - Transfers'] = (C+D+E+F) - (A+B)
@@ -554,7 +556,7 @@ customer_data = customer_data.merge(customers[['corpcode', 'Customer']].drop_dup
                            right_on='corpcode')
 customer_data.set_index(['corpcode', 'Customer'], inplace=True)
 
-customer_data.to_excel('010-Renter Profitability Output/customer_data_2023-05-23.xlsx')
+customer_data.to_excel(f'010-Renter Profitability Output/customer_data_{datetime.date.today()}.xlsx')
 
 #%%#################################################################################################
 
