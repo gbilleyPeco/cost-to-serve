@@ -368,7 +368,7 @@ scenario_data_final = pd.concat([scenario_data, delta_df])
 
 print('Exporting the Scenario Dataframe.')
 # Export
-scenario_data_final.to_excel('troubleshooting/scenario_data_2023-05-23.xlsx')
+scenario_data_final.to_excel(f'010-Renter Profitability Output/scenario_data_{datetime.date.today()}.xlsx')
 
 
 #%%#################################################################################################
@@ -557,22 +557,3 @@ customer_data = customer_data.merge(customers[['corpcode', 'Customer']].drop_dup
 customer_data.set_index(['corpcode', 'Customer'], inplace=True)
 
 customer_data.to_excel(f'010-Renter Profitability Output/customer_data_{datetime.date.today()}.xlsx')
-
-#%%#################################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
