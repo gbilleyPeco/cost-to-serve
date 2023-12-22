@@ -163,7 +163,7 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBlockUntilDone" />
     </Node>
-    <Node ToolID="369">
+    <Node ToolID="371">
       <GuiSettings>
         <Position x="1254" y="258" />
       </GuiSettings>
@@ -549,7 +549,7 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
     </Node>
-    <Node ToolID="367">
+    <Node ToolID="370">
       <GuiSettings>
         <Position x="54" y="390" />
       </GuiSettings>
@@ -830,7 +830,7 @@ Finally, macro "2_Account Model - Inventory Adjustments" takes as input macro "1
     </Connection>
     <Connection>
       <Origin ToolID="70" Connection="Output2" />
-      <Destination ToolID="369" Connection="Control" />
+      <Destination ToolID="371" Connection="Control" />
     </Connection>
     <Connection>
       <Origin ToolID="270" Connection="Unique" />
@@ -841,7 +841,7 @@ Finally, macro "2_Account Model - Inventory Adjustments" takes as input macro "1
       <Destination ToolID="280" Connection="Right" />
     </Connection>
     <Connection>
-      <Origin ToolID="367" Connection="Customer Demand" />
+      <Origin ToolID="370" Connection="Customer Demand" />
       <Destination ToolID="280" Connection="Left" />
     </Connection>
     <Connection name="#1">
@@ -861,7 +861,7 @@ Finally, macro "2_Account Model - Inventory Adjustments" takes as input macro "1
       <Destination ToolID="70" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="367" Connection="Customers" />
+      <Origin ToolID="370" Connection="Customers" />
       <Destination ToolID="279" Connection="Input" />
     </Connection>
   </Connections>
@@ -933,8 +933,8 @@ Finally, macro "2_Account Model - Inventory Adjustments" takes as input macro "1
       <Wiz_CustomGraphic value="False" />
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
-        <Tool ToolId="367" Selected="True" />
-        <Tool ToolId="369" Selected="True" />
+        <Tool ToolId="371" Selected="True" />
+        <Tool ToolId="370" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />

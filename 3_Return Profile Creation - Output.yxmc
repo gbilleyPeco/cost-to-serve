@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="2022.3">
+<AlteryxDocument yxmdVer="2021.4">
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
@@ -35,11 +35,11 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Corporate Code" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Corporate Description" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Account Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Corporate Code" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Corporate Description" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Base Model" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Account Model" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -65,11 +65,11 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
-            <Field name="Corporate Description" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Account Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Corporate Code" size="19" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Corporate Description" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Base Model" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Account Model" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -91,19 +91,19 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="True">
           <RecordInfo>
-            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_WString" />
-            <Field name="Corporate Description" size="255" source="Formula: Replace([Corporate Description], &quot;&amp;&quot;, &quot;And&quot;) (BatchMacro)" type="V_String" />
-            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
+            <Field name="Corporate Code" size="19" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Corporate Description" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Evaulate" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Base Model" size="255" source="Formula: [_CurrentField_]" type="V_String" />
             <Field name="Account Model" size="255" source="Formula: left([Base Model],Length([Base Model])-1) + &quot; - &quot; +[Corporate Description] + &quot;\&quot;" type="V_String" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="False">
           <RecordInfo>
-            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_WString" />
-            <Field name="Corporate Description" size="255" source="Formula: Replace([Corporate Description], &quot;&amp;&quot;, &quot;And&quot;) (BatchMacro)" type="V_String" />
-            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
+            <Field name="Corporate Code" size="19" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Corporate Description" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Evaulate" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Base Model" size="255" source="Formula: [_CurrentField_]" type="V_String" />
             <Field name="Account Model" size="255" source="Formula: left([Base Model],Length([Base Model])-1) + &quot; - &quot; +[Corporate Description] + &quot;\&quot;" type="V_String" />
           </RecordInfo>
         </MetaInfo>
@@ -154,9 +154,9 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
             <Field name="penaltycost" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
             <Field name="penaltycostuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
             <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
-            <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -209,9 +209,9 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
             <Field name="penaltycost" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
             <Field name="penaltycostuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
             <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
-            <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="corpcode" />
@@ -236,12 +236,12 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
             <Field name="penaltycost" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
             <Field name="penaltycostuom" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
             <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select customerdemand.* &#xA;from customerdemand" type="V_WString" />
-            <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_WString" />
-            <Field name="Corporate Description" size="255" source="Formula: Replace([Corporate Description], &quot;&amp;&quot;, &quot;And&quot;) (BatchMacro)" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
+            <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="Corporate Code" size="19" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Corporate Description" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Base Model" size="255" source="Formula: [_CurrentField_]" type="V_String" />
             <Field name="Account Model" size="255" source="Formula: left([Base Model],Length([Base Model])-1) + &quot; - &quot; +[Corporate Description] + &quot;\&quot;" type="V_String" />
           </RecordInfo>
           <SortInfo>
@@ -250,10 +250,10 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </MetaInfo>
         <MetaInfo connection="Right">
           <RecordInfo>
-            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_WString" />
-            <Field name="Corporate Description" size="255" source="Formula: Replace([Corporate Description], &quot;&amp;&quot;, &quot;And&quot;) (BatchMacro)" type="V_String" />
-            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
+            <Field name="Corporate Code" size="19" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Corporate Description" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Evaulate" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Base Model" size="255" source="Formula: [_CurrentField_]" type="V_String" />
             <Field name="Account Model" size="255" source="Formula: left([Base Model],Length([Base Model])-1) + &quot; - &quot; +[Corporate Description] + &quot;\&quot;" type="V_String" />
           </RecordInfo>
           <SortInfo noProgress="True">
@@ -295,45 +295,49 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Left">
           <RecordInfo>
-            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
-            <Field name="customername" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="status" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="address" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="city" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="region" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="postalcode" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="country" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="latitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="longitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesource" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowbackorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowdirectship" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="notes" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="region.1" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="avgloadsz" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="locdescription" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="soipquantity" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="pecoregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="insoip" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="pecosubregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="liveload" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="liveloadrank" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="zone" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="depottype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="transservicetype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="queuepriority" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="id" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
+            <Field name="customername" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="status" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="address" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="city" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="region" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="postalcode" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="country" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="latitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="longitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesource" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowbackorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowdirectship" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="notes" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="georegion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="issueqty" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="avgloadsz" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="locdescription" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="soipquantity" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="pecoregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="insoip" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="pecosubregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="liveload" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="liveloadrank" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="zone" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="depottype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="transservicetype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="queuepriority" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="geographicriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="userdefinedriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="operatingschedule" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="customername" />
@@ -341,45 +345,49 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </MetaInfo>
         <MetaInfo connection="Join">
           <RecordInfo>
-            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
-            <Field name="customername" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="status" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="address" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="city" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="region" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="postalcode" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="country" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="latitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="longitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesource" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowbackorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowdirectship" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="notes" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="region.1" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="avgloadsz" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="locdescription" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="soipquantity" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="pecoregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="insoip" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="pecosubregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="liveload" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="liveloadrank" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="zone" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="depottype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="transservicetype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="queuepriority" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="id" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
+            <Field name="customername" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="status" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="address" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="city" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="region" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="postalcode" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="country" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="latitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="longitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesource" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowbackorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowdirectship" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="notes" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="georegion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="issueqty" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="avgloadsz" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="locdescription" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="soipquantity" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="pecoregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="insoip" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="pecosubregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="liveload" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="liveloadrank" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="zone" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="depottype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="transservicetype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="queuepriority" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="geographicriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="userdefinedriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="operatingschedule" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="Right_customername" size="8190" source="Summarize: GroupBy - customername" type="V_WString" />
           </RecordInfo>
           <SortInfo>
@@ -443,45 +451,49 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field description="PrimaryKey" name="id" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
-            <Field name="customername" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="status" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="address" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="city" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="region" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="postalcode" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="country" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="latitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="longitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesource" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowbackorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="allowdirectship" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="notes" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="region.1" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="avgloadsz" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="locdescription" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="soipquantity" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="pecoregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="insoip" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="pecosubregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="liveload" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="liveloadrank" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="zone" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="depottype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="transservicetype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="queuepriority" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="id" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
+            <Field name="customername" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="status" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="address" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="city" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="region" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="postalcode" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="country" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="latitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="longitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesource" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowbackorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="allowdirectship" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="notes" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="georegion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="issueqty" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="avgloadsz" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="locdescription" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="soipquantity" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="pecoregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="insoip" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="pecosubregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="liveload" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="liveloadrank" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="zone" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="depottype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="transservicetype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="queuepriority" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="geographicriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="userdefinedriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="operatingschedule" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="Right_customername" size="8190" source="Summarize: GroupBy - customername" type="V_WString" />
             <Field name="customer_status" size="254" source="Formula: &quot;Exclude&quot;" type="V_String" />
           </RecordInfo>
@@ -511,11 +523,11 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
+            <Field name="Corporate Code" size="19" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_WString" />
             <Field name="Corporate Description" size="255" source="Formula: Replace([Corporate Description], &quot;&amp;&quot;, &quot;And&quot;)" type="V_String" />
-            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
-            <Field name="Account Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Evaulate" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Base Model" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
+            <Field name="Account Model" size="255" source="File: C:\Users\gbilley\Documents\GitHub\cost-to-serve\Account List.xlsx|||`Selected Accounts$`" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -549,11 +561,11 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output26">
           <RecordInfo>
-            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_WString" />
-            <Field name="Corporate Description" size="255" source="Formula: Replace([Corporate Description], &quot;&amp;&quot;, &quot;And&quot;) (BatchMacro)" type="V_String" />
-            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
-            <Field name="Account Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
+            <Field name="Corporate Code" size="19" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Corporate Description" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Evaulate" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Base Model" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Account Model" size="255" source="Formula: [_CurrentField_]" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -576,17 +588,17 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_WString" />
-            <Field name="Corporate Description" size="255" source="Formula: Replace([Corporate Description], &quot;&amp;&quot;, &quot;And&quot;) (BatchMacro)" type="V_String" />
-            <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
-            <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
+            <Field name="Corporate Code" size="19" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Corporate Description" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Evaulate" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Base Model" size="255" source="Formula: [_CurrentField_]" type="V_String" />
             <Field name="Account Model" size="255" source="Formula: left([Base Model],Length([Base Model])-1) + &quot; - &quot; +[Corporate Description] + &quot;\&quot;" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
-    <Node ToolID="314">
+    <Node ToolID="321">
       <GuiSettings>
         <Position x="78" y="1098" />
       </GuiSettings>
@@ -959,7 +971,8 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
             <Field name="allowpartialfilllineitems" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="allowdirectship" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="region.1" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="georegion" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="issueqty" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="avgloadsz" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="loccode" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="locdescription" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
@@ -978,6 +991,9 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
             <Field name="depottype" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="transservicetype" size="200" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
             <Field name="queuepriority" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="geographicriskscore" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="userdefinedriskscore" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="operatingschedule" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select customers.* &#xA;from customers" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Scenarios">
@@ -988,6 +1004,7 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
             <Field name="description" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
             <Field name="tags" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
             <Field name="notes" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+            <Field name="technology" size="8190" source="File: aka:OPT-MODEL-VOLLEY|||select scenarios.* &#xA;from scenarios" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Scenario Item Assignments">
@@ -1142,10 +1159,10 @@ Query=`Selected Accounts$`</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="customername" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-            <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="customername" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+            <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -1218,9 +1235,171 @@ scenario items</Text>
         </Annotation>
       </Properties>
     </Node>
+    <Node ToolID="316">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="2213" y="2477" width="158" height="195" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 316</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="130">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2238" y="2526" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:OPT-MODEL-VOLLEY|||scenarioitemassignments</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <FormatSpecificOptions>
+                <Projection />
+                <SpatialObjSize>8000</SpatialObjSize>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Upsert</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:OPT-MODEL-VOLLEY
+Query=scenarioitemassignments</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="317">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="2057" y="3125" width="158" height="195" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 317</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="110">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2082" y="3174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:OPT-MODEL-VOLLEY|||scenarioitems</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <FormatSpecificOptions>
+                <Projection />
+                <SpatialObjSize>8000</SpatialObjSize>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Upsert</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:OPT-MODEL-VOLLEY
+Query=scenarioitems</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="315">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1913" y="1685" width="158" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 315</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="120">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1938" y="1734" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:OPT-MODEL-VOLLEY|||scenarios</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <FormatSpecificOptions>
+                <Projection />
+                <SpatialObjSize>8000</SpatialObjSize>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Upsert</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:OPT-MODEL-VOLLEY
+Query=scenarios</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
     <Node ToolID="271">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="101" y="2849" width="1833" height="489" />
+        <Position x="101" y="2849" width="1693" height="489" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1255,7 +1434,7 @@ scenario items</Text>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
+                <Field name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;Customers&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;Status='Exclude'&quot;" type="V_WString" />
@@ -1319,7 +1498,7 @@ scenario items</Text>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: (Multiple Sources)" type="Int32" />
+                <Field name="id" source="Formula: (Multiple Sources)" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
@@ -1356,7 +1535,7 @@ action = "constraintvalue = account_inputval...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: [id]+1" type="Int32" />
+                <Field name="id" source="Formula: [id]+1" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Update_production_constraints_inputvalue&quot;" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;ProductionConstraints&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;constraintvalue = account_inputvalue&quot;" type="V_WString" />
@@ -1407,7 +1586,7 @@ action = "constraintvalue = account_inputval...</DefaultAnnotationText>
         </Node>
         <Node ToolID="98">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="378" y="2898" />
+            <Position x="377" y="2898" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1478,7 +1657,7 @@ action = "constraintvalue = account_inputval...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: Null()" type="Int32" />
+                <Field name="id" source="Formula: Null()" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;Customers&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;Status='Exclude'&quot;" type="V_WString" />
@@ -1520,45 +1699,49 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: Null()" type="Int32" />
-                <Field name="customername" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="id" source="Formula: Null()" type="Int32" />
+                <Field name="customername" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
                 <Field name="status" size="8190" source="Formula: &quot;Include&quot;" type="V_WString" />
-                <Field name="address" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="city" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="region" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="postalcode" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="country" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="latitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="longitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesource" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowbackorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowdirectship" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="address" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="city" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="region" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="postalcode" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="country" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="latitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="longitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesource" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowbackorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowdirectship" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
                 <Field name="notes" size="8190" source="Formula: Null()" type="V_WString" />
-                <Field name="region.1" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="avgloadsz" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="locdescription" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="soipquantity" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="pecoregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="insoip" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="pecosubregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="liveload" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="liveloadrank" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="zone" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="depottype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="transservicetype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="queuepriority" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="georegion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="issueqty" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="avgloadsz" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="locdescription" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="soipquantity" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="pecoregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="insoip" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="pecosubregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="liveload" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="liveloadrank" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="zone" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="depottype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="transservicetype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="queuepriority" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="geographicriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="userdefinedriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="operatingschedule" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
                 <Field name="Right_customername" size="8190" source="Summarize: GroupBy - customername" type="V_WString" />
                 <Field name="customer_status" size="254" source="Formula: &quot;Exclude&quot;" type="V_String" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
@@ -1577,7 +1760,7 @@ tablena...</DefaultAnnotationText>
         </Node>
         <Node ToolID="131">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
-            <Position x="138" y="2910" />
+            <Position x="137" y="2910" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1592,45 +1775,49 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Unique">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
-                <Field name="customername" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="status" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="address" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="city" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="region" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="postalcode" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="country" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="latitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="longitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesource" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowbackorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowdirectship" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="notes" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="region.1" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="avgloadsz" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="locdescription" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="soipquantity" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="pecoregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="insoip" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="pecosubregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="liveload" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="liveloadrank" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="zone" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="depottype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="transservicetype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="queuepriority" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="id" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
+                <Field name="customername" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="status" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="address" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="city" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="region" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="postalcode" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="country" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="latitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="longitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesource" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowbackorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowdirectship" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="notes" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="georegion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="issueqty" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="avgloadsz" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="locdescription" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="soipquantity" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="pecoregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="insoip" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="pecosubregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="liveload" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="liveloadrank" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="zone" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="depottype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="transservicetype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="queuepriority" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="geographicriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="userdefinedriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="operatingschedule" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
                 <Field name="Right_customername" size="8190" source="Summarize: GroupBy - customername" type="V_WString" />
                 <Field name="customer_status" size="254" source="Formula: &quot;Exclude&quot;" type="V_String" />
               </RecordInfo>
@@ -1640,45 +1827,49 @@ tablena...</DefaultAnnotationText>
             </MetaInfo>
             <MetaInfo connection="Duplicates">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
-                <Field name="customername" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="status" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="address" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="city" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="region" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="postalcode" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="country" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="latitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="longitude" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesource" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowbackorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="allowdirectship" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="notes" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="region.1" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="avgloadsz" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="loccode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="locdescription" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="soipquantity" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="pecoregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="corpcode" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="corpname" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="insoip" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="pecosubregion" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="liveload" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="liveloadrank" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="zone" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="depottype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="transservicetype" size="200" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
-                <Field name="queuepriority" size="8190" source="File: odbc:DSN=Volley_WorkflowTest;UID=b71238c1-4e70-477f-a276-6d7f9f0114c9_144163c9e129;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="id" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="Int32" />
+                <Field name="customername" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="status" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="address" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="city" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="region" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="postalcode" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="country" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="latitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="longitude" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesource" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesourceorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="singlesourcelineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowbackorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="backordertimelimit" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="backordertimeuom" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowpartialfillorders" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowpartialfilllineitems" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="allowdirectship" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="notes" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="georegion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="issueqty" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="avgloadsz" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="loccode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="locdescription" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="lower48_can_mex" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="soipquantity" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="pecoregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="corpcode" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="corpname" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="insoip" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="pecosubregion" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="liveload" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="liveloadrank" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="zone" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="heat_treatment_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="new_pallet_rqmt" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="depottype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="transservicetype" size="200" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="queuepriority" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="geographicriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="userdefinedriskscore" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
+                <Field name="operatingschedule" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select customers.* &#xA;from customers" type="V_WString" />
                 <Field name="Right_customername" size="8190" source="Summarize: GroupBy - customername" type="V_WString" />
                 <Field name="customer_status" size="254" source="Formula: &quot;Exclude&quot;" type="V_String" />
               </RecordInfo>
@@ -1738,7 +1929,7 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="(Multiple Sources)" type="Int32" />
+                <Field name="id" source="(Multiple Sources)" type="Int32" />
                 <Field name="itemname" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
@@ -1774,7 +1965,7 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
+                <Field name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;Customers&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;Status='Exclude'&quot;" type="V_WString" />
@@ -1807,7 +1998,7 @@ tablena...</DefaultAnnotationText>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="RecordID" source="RecordID: Starting Value=1" type="Int64" />
-                <Field description="PrimaryKey" name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
+                <Field name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;Customers&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;Status='Exclude'&quot;" type="V_WString" />
@@ -1845,7 +2036,7 @@ tablena...</DefaultAnnotationText>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="RecordID" source="RecordID: Starting Value=1" type="Int64" />
-                <Field description="PrimaryKey" name="id" source="Formula: Null()" type="Int32" />
+                <Field name="id" source="Formula: Null()" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;Customers&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;Status='Exclude'&quot;" type="V_WString" />
@@ -1887,7 +2078,7 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: Null()" type="Int32" />
+                <Field name="id" source="Formula: Null()" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;Customers&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;Status='Exclude'&quot;" type="V_WString" />
@@ -1904,7 +2095,7 @@ tablena...</DefaultAnnotationText>
         </Node>
         <Node ToolID="99">
           <GuiSettings>
-            <Position x="377" y="3066" />
+            <Position x="376" y="3066" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1970,7 +2161,7 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
+                <Field name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;Customers&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;Status='Exclude'&quot;" type="V_WString" />
@@ -2003,7 +2194,7 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
+                <Field name="id" source="Formula: [Count]+[RecordID]" type="Int32" />
                 <Field name="itemname" size="1073741823" source="Formula: &quot;Exclude_Customer_&quot;+[corpcode]" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="Formula: &quot;Customers&quot;" type="V_WString" />
                 <Field name="action" size="1073741823" source="Formula: &quot;Status='Exclude'&quot;" type="V_WString" />
@@ -2066,7 +2257,7 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="True">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="(Multiple Sources)" type="Int32" />
+                <Field name="id" source="(Multiple Sources)" type="Int32" />
                 <Field name="itemname" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
@@ -2080,7 +2271,7 @@ tablena...</DefaultAnnotationText>
             </MetaInfo>
             <MetaInfo connection="False">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="(Multiple Sources)" type="Int32" />
+                <Field name="id" source="(Multiple Sources)" type="Int32" />
                 <Field name="itemname" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
@@ -2097,7 +2288,7 @@ tablena...</DefaultAnnotationText>
         </Node>
         <Node ToolID="216">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
-            <Position x="1650" y="3090" />
+            <Position x="1494" y="3090" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -2112,7 +2303,7 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Unique">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="(Multiple Sources)" type="Int32" />
+                <Field name="id" source="(Multiple Sources)" type="Int32" />
                 <Field name="itemname" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
@@ -2129,7 +2320,7 @@ tablena...</DefaultAnnotationText>
             </MetaInfo>
             <MetaInfo connection="Duplicates">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="(Multiple Sources)" type="Int32" />
+                <Field name="id" source="(Multiple Sources)" type="Int32" />
                 <Field name="itemname" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
@@ -2196,7 +2387,7 @@ tablena...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="(Multiple Sources)" type="Int32" />
+                <Field name="id" source="(Multiple Sources)" type="Int32" />
                 <Field name="itemname" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="tablename" size="1073741823" source="(Multiple Sources)" type="V_WString" />
                 <Field name="action" size="1073741823" source="(Multiple Sources)" type="V_WString" />
@@ -2211,47 +2402,11 @@ tablena...</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
         </Node>
-        <Node ToolID="110">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="1806" y="3174" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <File MaxRecords="" FileFormat="23">aka:OPT-MODEL-VOLLEY|||scenarioitems</File>
-              <Passwords />
-              <CachedCosmeticName />
-              <FormatSpecificOptions>
-                <TransactionMessages>False</TransactionMessages>
-                <KeyForUpdate>
-                  <KU_Fields>
-                    <KU_Field key="itemname" />
-                  </KU_Fields>
-                </KeyForUpdate>
-                <Projection />
-                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
-                <SpatialObjSize>8000</SpatialObjSize>
-                <OutputOption>Upsert</OutputOption>
-                <PostSQL />
-                <TransactionSize>10000</TransactionSize>
-                <TableStyle>Quoted</TableStyle>
-                <PreSQL />
-              </FormatSpecificOptions>
-              <MultiFile value="False" />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>aka:OPT-MODEL-VOLLEY
-Query=scenarioitems</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="133">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="100" y="1949" width="2014" height="825" />
+        <Position x="100" y="1949" width="1802" height="825" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -3324,48 +3479,11 @@ notes = Null()
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
         </Node>
-        <Node ToolID="130">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="1986" y="2526" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <File MaxRecords="" FileFormat="23">aka:OPT-MODEL-VOLLEY|||scenarioitemassignments</File>
-              <Passwords />
-              <CachedCosmeticName />
-              <FormatSpecificOptions>
-                <TransactionMessages>False</TransactionMessages>
-                <KeyForUpdate>
-                  <KU_Fields>
-                    <KU_Field key="scenarioname" />
-                    <KU_Field key="itemname" />
-                  </KU_Fields>
-                </KeyForUpdate>
-                <Projection />
-                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
-                <SpatialObjSize>8000</SpatialObjSize>
-                <OutputOption>Upsert</OutputOption>
-                <PostSQL />
-                <TransactionSize>10000</TransactionSize>
-                <TableStyle>Quoted</TableStyle>
-                <PreSQL />
-              </FormatSpecificOptions>
-              <MultiFile value="False" />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>aka:OPT-MODEL-VOLLEY
-Query=scenarioitemassignments</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="272">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="101" y="1552" width="1893" height="322" />
+        <Position x="101" y="1552" width="1621" height="322" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -3383,7 +3501,7 @@ Query=scenarioitemassignments</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="210">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="426" y="1734" />
+            <Position x="1638" y="1770" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -3478,10 +3596,10 @@ status = "I...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="Corporate Code" size="19" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_WString" />
-                <Field name="Corporate Description" size="255" source="Formula: Replace([Corporate Description], &quot;&amp;&quot;, &quot;And&quot;) (BatchMacro)" type="V_String" />
-                <Field name="Evaulate" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
-                <Field name="Base Model" size="255" source="File: C:\Users\nikok\Downloads\Account Specific Scenario Building_03292023\Account Specific Scenario Building_03292023 - Copy\Account List.xlsx|||`Selected Accounts$` (BatchMacro)" type="V_String" />
+                <Field name="Corporate Code" size="19" source="Formula: [_CurrentField_]" type="V_WString" />
+                <Field name="Corporate Description" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+                <Field name="Evaulate" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+                <Field name="Base Model" size="255" source="Formula: [_CurrentField_]" type="V_String" />
                 <Field name="Account Model" size="255" source="Formula: left([Base Model],Length([Base Model])-1) + &quot; - &quot; +[Corporate Description] + &quot;\&quot;" type="V_String" />
                 <Field name="scenarioname" size="1073741823" source="Formula: &quot;SOIP Optimized – Less &quot;+[Corporate Code]" type="V_WString" />
                 <Field name="id" size="1073741823" source="Formula: Null()" type="V_WString" />
@@ -3652,7 +3770,7 @@ status = "I...</DefaultAnnotationText>
         </Node>
         <Node ToolID="113">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-            <Position x="365" y="1758" />
+            <Position x="365" y="1757" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -3722,12 +3840,13 @@ status = "I...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field description="PrimaryKey" name="id" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="Int32" />
-                <Field name="scenarioname" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
-                <Field name="status" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
-                <Field name="description" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
-                <Field name="tags" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
-                <Field name="notes" size="8190" source="File: odbc:DSN=PECO_AS_INTENDED_02132023;UID=cda772e2-1f6c-424f-b905-1aca1cd08266_a5ad0457af3a;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+                <Field name="id" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="Int32" />
+                <Field name="scenarioname" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+                <Field name="status" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+                <Field name="description" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+                <Field name="tags" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+                <Field name="notes" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
+                <Field name="technology" size="8190" source="File: odbc:DSN=OPT-MODEL-VOLLEY;UID=ce006f73-3ca3-48c3-bc0f-b6a0c461b598_c551346162e6;PWD=__EncPwd1__|||select scenarios.* &#xA;from scenarios" type="V_WString" />
                 <Field name="duplicate_indicator" size="1073741823" source="Formula: IF [scenarioname] = &quot;SOIP Optimized – Less &quot;+'inputvalue' THEN 1 ELSE 0 ENDIF" type="V_WString" />
               </RecordInfo>
             </MetaInfo>
@@ -3865,7 +3984,7 @@ status = "I...</DefaultAnnotationText>
         </Node>
         <Node ToolID="209">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="1518" y="1770" />
+            <Position x="1422" y="1770" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -3918,43 +4037,6 @@ status = "I...</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
         </Node>
-        <Node ToolID="120">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="1866" y="1638" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <File MaxRecords="" FileFormat="23">aka:OPT-MODEL-VOLLEY|||scenarios</File>
-              <Passwords />
-              <CachedCosmeticName />
-              <Disable>False</Disable>
-              <FormatSpecificOptions>
-                <TransactionMessages>False</TransactionMessages>
-                <KeyForUpdate>
-                  <KU_Fields>
-                    <KU_Field key="scenarioname" />
-                  </KU_Fields>
-                </KeyForUpdate>
-                <Projection />
-                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
-                <SpatialObjSize>8000</SpatialObjSize>
-                <OutputOption>Upsert</OutputOption>
-                <PostSQL />
-                <TransactionSize>10000</TransactionSize>
-                <TableStyle>Quoted</TableStyle>
-                <PreSQL />
-              </FormatSpecificOptions>
-              <MultiFile value="False" />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>aka:OPT-MODEL-VOLLEY
-Query=scenarios</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-        </Node>
       </ChildNodes>
     </Node>
   </Nodes>
@@ -3992,7 +4074,7 @@ Query=scenarios</DefaultAnnotationText>
       <Destination ToolID="53" Connection="Right" />
     </Connection>
     <Connection>
-      <Origin ToolID="314" Connection="Customers" />
+      <Origin ToolID="321" Connection="Customers" />
       <Destination ToolID="53" Connection="Left" />
     </Connection>
     <Connection>
@@ -4016,11 +4098,11 @@ Query=scenarios</DefaultAnnotationText>
       <Destination ToolID="17" Connection="Action" />
     </Connection>
     <Connection>
-      <Origin ToolID="314" Connection="Customers" />
+      <Origin ToolID="321" Connection="Customers" />
       <Destination ToolID="252" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="314" Connection="Customer Demand" />
+      <Origin ToolID="321" Connection="Customer Demand" />
       <Destination ToolID="23" Connection="Targets" />
     </Connection>
     <Connection>
@@ -4028,7 +4110,7 @@ Query=scenarios</DefaultAnnotationText>
       <Destination ToolID="23" Connection="Source" />
     </Connection>
     <Connection>
-      <Origin ToolID="314" Connection="Scenarios" />
+      <Origin ToolID="321" Connection="Scenarios" />
       <Destination ToolID="204" Connection="Input" />
     </Connection>
     <Connection name="#1">
@@ -4036,19 +4118,19 @@ Query=scenarios</DefaultAnnotationText>
       <Destination ToolID="204" Connection="Action" />
     </Connection>
     <Connection>
-      <Origin ToolID="314" Connection="Scenarios" />
+      <Origin ToolID="321" Connection="Scenarios" />
       <Destination ToolID="112" Connection="Input8" />
     </Connection>
     <Connection>
-      <Origin ToolID="314" Connection="Scenario Item Assignments" />
+      <Origin ToolID="321" Connection="Scenario Item Assignments" />
       <Destination ToolID="134" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="314" Connection="Scenario Item Assignments" />
+      <Origin ToolID="321" Connection="Scenario Item Assignments" />
       <Destination ToolID="125" Connection="Input8" />
     </Connection>
     <Connection>
-      <Origin ToolID="314" Connection="Scenario Items" />
+      <Origin ToolID="321" Connection="Scenario Items" />
       <Destination ToolID="96" Connection="Input" />
     </Connection>
     <Connection name="#1">
@@ -4583,7 +4665,7 @@ Query=scenarios</DefaultAnnotationText>
         <Tool ToolId="130" Selected="True" />
         <Tool ToolId="112" Selected="True" />
         <Tool ToolId="120" Selected="True" />
-        <Tool ToolId="314" Selected="True" />
+        <Tool ToolId="321" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />
